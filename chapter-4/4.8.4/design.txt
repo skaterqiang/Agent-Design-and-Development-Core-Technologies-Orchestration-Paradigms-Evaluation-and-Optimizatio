@@ -1,0 +1,12 @@
+参考“agent = create_agent(
+    model,
+    tools,
+    system_prompt=system_prompt,
+    middleware=[
+        TodoListMiddleware(  # 自动添加规划工具
+            system_prompt="在开始复杂任务前，使用 `write_todos` 创建清晰的任务清单。"
+        )
+    ]
+)”
+使用“ReAct（Reasoning + Acting）模式通过结构化的"思考-行动-观察"循环，使智能体能够自主规划、执行和调整多步骤任务。
+实现一个实验系统。

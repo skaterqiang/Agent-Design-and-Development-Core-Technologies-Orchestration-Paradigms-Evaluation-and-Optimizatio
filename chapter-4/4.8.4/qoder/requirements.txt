@@ -1,0 +1,36 @@
+# 第 4 章 4.8.4 节：AgenticCoding 方式实现智能体编排———基于 OpenClaw＋Qoder
+# ReAct 模式智能体实现依赖包
+#
+# 【本文件相对书稿原版的两处修正】
+# 书稿原配方无法安装，pip 会以退出码 1 失败，原因有两处（均已实测复现）：
+#
+#   1) 原有一行 `python>=3.9`。python 不是 PyPI 上的包（查询返回 HTTP 404），
+#      pip 报：ERROR: No matching distribution found for python>=3.9
+#      Python 版本要求应写在文档里，而不是 requirements.txt 里，故删除。
+#
+#   2) 原有 `langchain==0.1.0` 与 `langchain-core==0.1.0` 互相矛盾：
+#      langchain 0.1.0 自己要求 langchain-core>=0.1.7,<0.2，
+#      pip 报 ResolutionImpossible。
+#      更关键的是，本目录代码用的是
+#          from langchain.agents import create_agent
+#          from langchain.agents.middleware import TodoListMiddleware
+#      这两个 API 只存在于 langchain 1.x，0.1.x 里根本没有。
+#      也就是说原配方即使能装上，代码也跑不起来。
+#      故整体对齐到与全书一致的 langchain 1.4.x 栈。
+
+# 核心框架
+langchain==1.4.4
+langchain-core==1.6.9
+langchain-community==0.4.2
+langgraph==1.2.14
+langgraph-prebuilt==1.1.0
+
+# 通义千问集成
+dashscope==1.27.7
+
+# 运行环境要求：Python >= 3.10（langchain 1.x 的下限）
+
+# 可选依赖（用于扩展功能）
+# requests==2.31.0  # 用于真实API调用
+# pandas==2.1.0     # 用于数据分析
+# jsonschema==4.20.0 # 用于工具参数验证

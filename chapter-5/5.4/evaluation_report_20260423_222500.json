@@ -1,0 +1,1367 @@
+{
+  "report_id": "EVAL-20260423222500",
+  "generated_at": "2026-04-23T22:25:00.842934",
+  "conversation_count": 3,
+  "summary": {
+    "total_score": 0.7164731706614424,
+    "dimension_scores": {
+      "功能性能": 0.6465105688714752,
+      "用户体验": 0.784,
+      "业务价值": 0.8,
+      "技术质量": 0.6326
+    },
+    "ranking": {
+      "业务价值": 0.8,
+      "用户体验": 0.784,
+      "功能性能": 0.6465105688714752
+    },
+    "recommendations": [
+      "需要提高准确性，使回答更接近参考标准",
+      "相关性可以进一步提升",
+      "用户满意度可以进一步提升",
+      "需要提升转化率，优化转化策略",
+      "需要提高系统稳健性，增强异常输入处理能力"
+    ]
+  },
+  "conversations": [
+    {
+      "session_id": "emp001_20260423222436",
+      "user_id": "emp001",
+      "user_input": "华东区昨天卖了多少钱？",
+      "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+      "timestamp": "2026-04-23T22:24:36.177825",
+      "response_time_ms": 4210,
+      "metadata": {
+        "user_type": "employee",
+        "department": "销售部",
+        "current_order_id": null,
+        "complaint_escalated": false
+      },
+      "test_case": "销售数据查询"
+    },
+    {
+      "session_id": "cust004_20260423222441",
+      "user_id": "cust004",
+      "user_input": "怎么退货？",
+      "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？",
+      "timestamp": "2026-04-23T22:24:41.310744",
+      "response_time_ms": 5022,
+      "metadata": {
+        "user_type": "customer",
+        "department": null,
+        "current_order_id": null,
+        "complaint_escalated": false
+      },
+      "test_case": "退货流程"
+    },
+    {
+      "session_id": "cust005_20260423222445",
+      "user_id": "cust005",
+      "user_input": "有优惠券吗？",
+      "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠券哦！",
+      "timestamp": "2026-04-23T22:24:45.575048",
+      "response_time_ms": 4154,
+      "metadata": {
+        "user_type": "customer",
+        "department": null,
+        "current_order_id": null,
+        "complaint_escalated": false
+      },
+      "test_case": "优惠咨询"
+    }
+  ],
+  "detailed_results": {
+    "functional": {
+      "dimension": "功能性能",
+      "overall_score": 0.6465105688714752,
+      "metrics": {
+        "accuracy": 0.3994837642073059,
+        "relevance": 0.6223902106285095,
+        "completeness": 1.0
+      },
+      "strengths": [
+        "完整性好，回答包含所有必要信息"
+      ],
+      "improvements": [
+        "需要提高准确性，使回答更接近参考标准",
+        "相关性可以进一步提升"
+      ],
+      "details": {
+        "accuracy": {
+          "em": 0.0,
+          "f1": 0.685578100720285,
+          "rouge": 0.3131313097979798
+        },
+        "relevance": {
+          "avg_similarity": 0.6223902106285095
+        },
+        "completeness": {
+          "avg_completeness": 1.0
+        }
+      },
+      "problems": {
+        "summary": {
+          "functional_accuracy": {
+            "count": 4,
+            "avg_score": 0.09987094105182648,
+            "min_score": 0.0,
+            "max_score": 0.3994837642073059,
+            "serious_problems": [
+              {
+                "problem_type": "准确性不足的general对话",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: general",
+                  "精确匹配(EM): 0.00",
+                  "F1分数: 0.62",
+                  "ROUGE-L分数: 0.00",
+                  "回答与参考回答差异较大"
+                ],
+                "user_input": "华东区昨天卖了多少钱？",
+                "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+                "conversation_type": "general",
+                "metric_type": "accuracy",
+                "reference_response": "很抱歉，查询销售数据需要您先登录并具备相应的权限。请您先完成登录，或者联系管理员获取相关权限。如果您有其他问题需要帮助，比如订单查询或产品咨询，我很乐意为您提供支持！",
+                "similarity_score": 0.0
+              },
+              {
+                "problem_type": "准确性不足的general对话",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: general",
+                  "精确匹配(EM): 0.00",
+                  "F1分数: 0.98",
+                  "ROUGE-L分数: 0.67",
+                  "回答与参考回答差异较大"
+                ],
+                "user_input": "怎么退货？",
+                "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？",
+                "conversation_type": "general",
+                "metric_type": "accuracy",
+                "reference_response": "您好！关于退货，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：请提供您的订单号，或者我可以帮您查询您名下的订单\n2. **退货原因**：是因为商品质量问题、发错货、还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？",
+                "similarity_score": 0.0
+              },
+              {
+                "problem_type": "准确性不足的general对话",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: general",
+                  "精确匹配(EM): 0.00",
+                  "F1分数: 0.46",
+                  "ROUGE-L分数: 0.27",
+                  "回答与参考回答差异较大"
+                ],
+                "user_input": "有优惠券吗？",
+                "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠券哦！",
+                "conversation_type": "general",
+                "metric_type": "accuracy",
+                "reference_response": "您好！关于优惠券的发放和使用，我需要说明一下：\n\n我这边主要负责订单查询、产品比较、投诉处理等服务，优惠券相关的活动信息建议您：\n\n1. **查看APP/网站**：通常在首页、个人中心或促销活动页面会有优惠券领取入口\n2. **关注官方渠道**：我们的官方微信公众号、微博等会定期发布优惠活动\n3. **联系专门客服**：您可以联系我们的营销客服或拨打客服热线 400-xxx-xxxx 获取最新的优惠券信息\n\n如果您有其他问题，比如订单查询、产品咨询等，我很乐意为您服务！",
+                "similarity_score": 0.0
+              },
+              {
+                "problem_type": "整体准确性不足",
+                "score": 0.3994837642073059,
+                "threshold": 0.8,
+                "deduction_items": [
+                  "准确性得分 0.40 低于阈值 0.8",
+                  "EM得分: 0.00",
+                  "F1得分: 0.69",
+                  "ROUGE-L得分: 0.31",
+                  "回答与参考回答存在较大差异"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "conversation_type": "",
+                "metric_type": "",
+                "reference_response": "",
+                "similarity_score": 0.0
+              }
+            ]
+          },
+          "functional_relevance": {
+            "count": 2,
+            "avg_score": "0.51825476",
+            "min_score": "0.41411936",
+            "max_score": 0.6223902106285095,
+            "serious_problems": [
+              {
+                "problem_type": "相关性不足的general对话",
+                "score": "0.41411936",
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: general",
+                  "语义相似度: 0.41",
+                  "回答与用户问题相关性不够",
+                  "可能需要改进语义理解能力"
+                ],
+                "user_input": "华东区昨天卖了多少钱？",
+                "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+                "conversation_type": "general",
+                "metric_type": "relevance",
+                "reference_response": "",
+                "similarity_score": "0.41411936"
+              },
+              {
+                "problem_type": "整体相关性不足",
+                "score": 0.6223902106285095,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "相关性得分 0.62 低于阈值 0.7",
+                  "平均相似度: 0.62",
+                  "回答与用户问题相关性不够",
+                  "可能需要改进语义理解能力"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "conversation_type": "",
+                "metric_type": "",
+                "reference_response": "",
+                "similarity_score": 0.0
+              }
+            ]
+          }
+        },
+        "total_problems": 6,
+        "has_serious_problems": true,
+        "detailed_problems": {
+          "functional_accuracy": [
+            {
+              "problem_type": "准确性不足的general对话",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: general",
+                "精确匹配(EM): 0.00",
+                "F1分数: 0.62",
+                "ROUGE-L分数: 0.00",
+                "回答与参考回答差异较大"
+              ],
+              "user_input": "华东区昨天卖了多少钱？",
+              "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+              "conversation_type": "general",
+              "metric_type": "accuracy",
+              "reference_response": "很抱歉，查询销售数据需要您先登录并具备相应的权限。请您先完成登录，或者联系管理员获取相关权限。如果您有其他问题需要帮助，比如订单查询或产品咨询，我很乐意为您提供支持！"
+            },
+            {
+              "problem_type": "准确性不足的general对话",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: general",
+                "精确匹配(EM): 0.00",
+                "F1分数: 0.98",
+                "ROUGE-L分数: 0.67",
+                "回答与参考回答差异较大"
+              ],
+              "user_input": "怎么退货？",
+              "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？",
+              "conversation_type": "general",
+              "metric_type": "accuracy",
+              "reference_response": "您好！关于退货，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：请提供您的订单号，或者我可以帮您查询您名下的订单\n2. **退货原因**：是因为商品质量问题、发错货、还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+            },
+            {
+              "problem_type": "准确性不足的general对话",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: general",
+                "精确匹配(EM): 0.00",
+                "F1分数: 0.46",
+                "ROUGE-L分数: 0.27",
+                "回答与参考回答差异较大"
+              ],
+              "user_input": "有优惠券吗？",
+              "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠",
+              "conversation_type": "general",
+              "metric_type": "accuracy",
+              "reference_response": "您好！关于优惠券的发放和使用，我需要说明一下：\n\n我这边主要负责订单查询、产品比较、投诉处理等服务，优惠券相关的活动信息建议您：\n\n1. **查看APP/网站**：通常在首页、个人中心或促销活动页面会有优惠券领取入口\n2. **关注官方渠道**：我们的官方微信公众号、微博等会定期发布优惠活动\n3. **联系专门客服**：您可以联系我们的营销客服或拨打客服热线 400-xxx-xxxx 获取最新的优"
+            },
+            {
+              "problem_type": "整体准确性不足",
+              "score": 0.3994837642073059,
+              "threshold": 0.8,
+              "deduction_items": [
+                "准确性得分 0.40 低于阈值 0.8",
+                "EM得分: 0.00",
+                "F1得分: 0.69",
+                "ROUGE-L得分: 0.31",
+                "回答与参考回答存在较大差异"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            }
+          ],
+          "functional_relevance": [
+            {
+              "problem_type": "相关性不足的general对话",
+              "score": "0.41411936",
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: general",
+                "语义相似度: 0.41",
+                "回答与用户问题相关性不够",
+                "可能需要改进语义理解能力"
+              ],
+              "user_input": "华东区昨天卖了多少钱？",
+              "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+              "conversation_type": "general",
+              "metric_type": "relevance",
+              "similarity_score": "0.41411936"
+            },
+            {
+              "problem_type": "整体相关性不足",
+              "score": 0.6223902106285095,
+              "threshold": 0.7,
+              "deduction_items": [
+                "相关性得分 0.62 低于阈值 0.7",
+                "平均相似度: 0.62",
+                "回答与用户问题相关性不够",
+                "可能需要改进语义理解能力"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            }
+          ]
+        }
+      }
+    },
+    "user_experience": {
+      "dimension": "用户体验",
+      "overall_score": 0.784,
+      "metrics": {
+        "efficiency": 0.9200000000000002,
+        "satisfaction": 0.6933333333333334
+      },
+      "strengths": [
+        "响应速度快，用户体验流畅"
+      ],
+      "improvements": [
+        "用户满意度可以进一步提升"
+      ],
+      "details": {
+        "efficiency": {
+          "overall_score": 0.9200000000000002,
+          "p50_response_time": 4210.0,
+          "p95_response_time": 4940.8,
+          "completion_rate": 1.0,
+          "total_sessions": 3,
+          "completed_sessions": 3,
+          "response_time_stats": {
+            "min": 4154.0,
+            "max": 5022.0,
+            "mean": 4462.0,
+            "std": 396.63921473634787
+          }
+        },
+        "satisfaction": {
+          "overall_score": 0.6933333333333334,
+          "avg_user_rating": 0.0,
+          "sentiment_score": 0.5,
+          "rated_sessions": 0,
+          "total_sessions": 3,
+          "response_quality_score": 0.9833333333333334
+        }
+      },
+      "problems": {
+        "summary": {
+          "satisfaction": {
+            "count": 2,
+            "avg_score": 0.3466666666666667,
+            "min_score": 0.0,
+            "max_score": 0.6933333333333334,
+            "serious_problems": [
+              {
+                "problem_type": "缺乏用户评分数据",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "日志中未包含用户评分数据",
+                  "无法准确评估用户满意度",
+                  "建议在系统中添加用户反馈机制"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "session_id": "",
+                "user_id": "",
+                "response_time_ms": 0.0,
+                "user_sentiment_score": 0.0,
+                "response_quality_score": 0.0
+              },
+              {
+                "problem_type": "整体满意度不足",
+                "score": 0.6933333333333334,
+                "threshold": 0.75,
+                "deduction_items": [
+                  "满意度得分 0.69 低于阈值 0.75",
+                  "平均用户评分: 0.00",
+                  "情感分析得分: 0.50",
+                  "响应质量得分: 0.98",
+                  "需要提升用户满意度和情感体验"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "session_id": "",
+                "user_id": "",
+                "response_time_ms": 0.0,
+                "user_sentiment_score": 0.0,
+                "response_quality_score": 0.0
+              }
+            ]
+          }
+        },
+        "total_problems": 2,
+        "has_serious_problems": true,
+        "detailed_problems": {
+          "satisfaction": [
+            {
+              "problem_type": "缺乏用户评分数据",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "日志中未包含用户评分数据",
+                "无法准确评估用户满意度",
+                "建议在系统中添加用户反馈机制"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            },
+            {
+              "problem_type": "整体满意度不足",
+              "score": 0.6933333333333334,
+              "threshold": 0.75,
+              "deduction_items": [
+                "满意度得分 0.69 低于阈值 0.75",
+                "平均用户评分: 0.00",
+                "情感分析得分: 0.50",
+                "响应质量得分: 0.98",
+                "需要提升用户满意度和情感体验"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            }
+          ]
+        }
+      }
+    },
+    "business_value": {
+      "dimension": "业务价值",
+      "overall_score": 0.8,
+      "metrics": {
+        "effectiveness": 1.0,
+        "intervention_rate": 1.0,
+        "conversion_rate": 0.0
+      },
+      "strengths": [
+        "问题解决率高，业务目标达成度好",
+        "人工干预率低，自动化程度高"
+      ],
+      "improvements": [
+        "需要提升转化率，优化转化策略"
+      ],
+      "details": {
+        "effectiveness": {
+          "overall_score": 1.0,
+          "resolution_rate": 1.0,
+          "by_category": {
+            "sales_data": {
+              "rate": 1.0,
+              "total": 1,
+              "solved": 1
+            },
+            "general": {
+              "rate": 1.0,
+              "total": 2,
+              "solved": 2
+            }
+          },
+          "total_conversations": 3,
+          "solved_conversations": 3
+        },
+        "intervention": {
+          "rate": 0.0,
+          "total_conversations": 3,
+          "intervened_conversations": 0
+        },
+        "conversion": {
+          "rate": 0.0,
+          "opportunities": 0,
+          "conversions": 0
+        }
+      },
+      "problems": {
+        "summary": {
+          "conversion": {
+            "count": 1,
+            "avg_score": 0.0,
+            "min_score": 0.0,
+            "max_score": 0.0,
+            "serious_problems": [
+              {
+                "problem_type": "转化率不足",
+                "score": 0.0,
+                "threshold": 0.4,
+                "deduction_items": [
+                  "转化率 0.00 低于阈值 0.4",
+                  "转化机会数: 0",
+                  "成功转化数: 0",
+                  "需要优化转化策略和话术"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "conversation_type": "",
+                "session_id": "",
+                "opportunity_type": ""
+              }
+            ]
+          }
+        },
+        "total_problems": 1,
+        "has_serious_problems": true,
+        "detailed_problems": {
+          "conversion": [
+            {
+              "problem_type": "转化率不足",
+              "score": 0.0,
+              "threshold": 0.4,
+              "deduction_items": [
+                "转化率 0.00 低于阈值 0.4",
+                "转化机会数: 0",
+                "成功转化数: 0",
+                "需要优化转化策略和话术"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            }
+          ]
+        }
+      }
+    },
+    "technical_quality": {
+      "dimension": "技术质量",
+      "overall_score": 0.6326,
+      "metrics": {
+        "robustness": 0.4543333333333333,
+        "security": 0.9000000000000001
+      },
+      "strengths": [
+        "安全性高，隐私保护和访问控制完善"
+      ],
+      "improvements": [
+        "需要提高系统稳健性，增强异常输入处理能力"
+      ],
+      "details": {
+        "robustness": {
+          "overall_score": 0.4543333333333333,
+          "error_handling_score": 0.5333333333333333,
+          "format_robustness": 0.8333333333333334,
+          "edge_case_coverage": 0.5,
+          "total_tests": 3,
+          "test_cases": [
+            {
+              "test_case": "销售数据查询",
+              "error_handling": 0.6,
+              "format_robustness": 0.5,
+              "edge_case_coverage": 0.5,
+              "overall": 0.54
+            },
+            {
+              "test_case": "退货流程",
+              "error_handling": 0.5,
+              "format_robustness": 0.9999999999999999,
+              "edge_case_coverage": 0.5,
+              "overall": 0.6499999999999999
+            },
+            {
+              "test_case": "优惠咨询",
+              "error_handling": 0.5,
+              "format_robustness": 0.9999999999999999,
+              "edge_case_coverage": 0.5,
+              "overall": 0.6499999999999999
+            }
+          ],
+          "adversarial_examples": [
+            {
+              "original": "我的订单123456在哪里？",
+              "perturbed": "我的订单I23456在哪里？",
+              "type": "订单号混淆",
+              "expected": "应正确识别订单号并提供物流信息"
+            },
+            {
+              "original": "我要查询产品信息",
+              "perturbed": "我要查詢產品信息",
+              "type": "字符编码",
+              "expected": "应正确处理不同字符编码"
+            },
+            {
+              "original": "投诉产品质量问题",
+              "perturbed": "投诉产品质量问题！！！！！！！！！",
+              "type": "标点重复",
+              "expected": "应正确理解情绪化的表达"
+            }
+          ]
+        },
+        "security": {
+          "overall_score": 0.9000000000000001,
+          "privacy_protection": 0.9,
+          "bias_detection": 0.9,
+          "access_control": 0.9,
+          "total_checks": 3,
+          "security_issues": [],
+          "score_breakdown": {
+            "privacy_scores": [
+              0.9,
+              0.9,
+              0.9
+            ],
+            "bias_scores": [
+              0.9,
+              0.9,
+              0.9
+            ],
+            "access_scores": [
+              0.9,
+              0.9,
+              0.9
+            ]
+          }
+        }
+      },
+      "problems": {
+        "summary": {
+          "robustness": {
+            "count": 9,
+            "avg_score": 0.4597407407407408,
+            "min_score": 0.08333333333333333,
+            "max_score": 0.6,
+            "serious_problems": [
+              {
+                "problem_type": "错误处理能力不足",
+                "score": 0.6,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "未提供替代解决方案"
+                ],
+                "user_input": "华东区昨天卖了多少钱？",
+                "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+                "test_case": "销售数据查询"
+              },
+              {
+                "problem_type": "格式鲁棒性不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "响应缺乏结构化格式（如加粗、列表）",
+                  "响应内容过短，可能不够详细",
+                  "响应缺乏明确的分段和换行"
+                ],
+                "user_input": "华东区昨天卖了多少钱？",
+                "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+                "test_case": "销售数据查询"
+              },
+              {
+                "problem_type": "边界情况处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "测试案例不属于边界情况，无法评估边界情况处理能力"
+                ],
+                "user_input": "华东区昨天卖了多少钱？",
+                "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。",
+                "test_case": "销售数据查询"
+              },
+              {
+                "problem_type": "错误处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "未提供替代解决方案",
+                  "缺少明确的错误提示和道歉"
+                ],
+                "user_input": "怎么退货？",
+                "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？",
+                "test_case": "退货流程"
+              },
+              {
+                "problem_type": "边界情况处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "测试案例不属于边界情况，无法评估边界情况处理能力"
+                ],
+                "user_input": "怎么退货？",
+                "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？",
+                "test_case": "退货流程"
+              },
+              {
+                "problem_type": "错误处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "未提供替代解决方案",
+                  "缺少明确的错误提示和道歉"
+                ],
+                "user_input": "有优惠券吗？",
+                "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠券哦！",
+                "test_case": "优惠咨询"
+              },
+              {
+                "problem_type": "边界情况处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "测试案例不属于边界情况，无法评估边界情况处理能力"
+                ],
+                "user_input": "有优惠券吗？",
+                "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠券哦！",
+                "test_case": "优惠咨询"
+              },
+              {
+                "problem_type": "对抗样本处理能力不足",
+                "score": 0.08333333333333333,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "响应不够专业",
+                  "响应不够完整详细",
+                  "整体稳健性指标不足，平均得分: 0.08",
+                  "响应不够正确准确",
+                  "响应不够清晰明确"
+                ],
+                "user_input": "系统生成的对抗样本",
+                "assistant_response": "基于现有响应的推断",
+                "test_case": "对抗样本测试"
+              },
+              {
+                "problem_type": "整体稳健性不足",
+                "score": 0.4543333333333333,
+                "threshold": 0.8,
+                "deduction_items": [
+                  "综合得分 0.45 低于阈值 0.8",
+                  "平均测试案例得分: 0.61",
+                  "对抗样本推断得分: 0.08"
+                ],
+                "user_input": "所有测试案例",
+                "assistant_response": "系统整体响应",
+                "test_case": "整体评估"
+              }
+            ]
+          }
+        },
+        "total_problems": 9,
+        "has_serious_problems": true,
+        "detailed_problems": {
+          "robustness": [
+            {
+              "problem_type": "错误处理能力不足",
+              "score": 0.6,
+              "threshold": 0.7,
+              "deduction_items": [
+                "未提供替代解决方案"
+              ],
+              "user_input": "华东区昨天卖了多少钱？",
+              "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+            },
+            {
+              "problem_type": "格式鲁棒性不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "响应缺乏结构化格式（如加粗、列表）",
+                "响应内容过短，可能不够详细",
+                "响应缺乏明确的分段和换行"
+              ],
+              "user_input": "华东区昨天卖了多少钱？",
+              "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+            },
+            {
+              "problem_type": "边界情况处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "测试案例不属于边界情况，无法评估边界情况处理能力"
+              ],
+              "user_input": "华东区昨天卖了多少钱？",
+              "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+            },
+            {
+              "problem_type": "错误处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "未提供替代解决方案",
+                "缺少明确的错误提示和道歉"
+              ],
+              "user_input": "怎么退货？",
+              "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+            },
+            {
+              "problem_type": "边界情况处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "测试案例不属于边界情况，无法评估边界情况处理能力"
+              ],
+              "user_input": "怎么退货？",
+              "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+            },
+            {
+              "problem_type": "错误处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "未提供替代解决方案",
+                "缺少明确的错误提示和道歉"
+              ],
+              "user_input": "有优惠券吗？",
+              "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+            },
+            {
+              "problem_type": "边界情况处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "测试案例不属于边界情况，无法评估边界情况处理能力"
+              ],
+              "user_input": "有优惠券吗？",
+              "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+            },
+            {
+              "problem_type": "对抗样本处理能力不足",
+              "score": 0.08333333333333333,
+              "threshold": 0.7,
+              "deduction_items": [
+                "响应不够专业",
+                "响应不够完整详细",
+                "整体稳健性指标不足，平均得分: 0.08",
+                "响应不够正确准确",
+                "响应不够清晰明确"
+              ],
+              "user_input": "系统生成的对抗样本",
+              "assistant_response": "基于现有响应的推断"
+            },
+            {
+              "problem_type": "整体稳健性不足",
+              "score": 0.4543333333333333,
+              "threshold": 0.8,
+              "deduction_items": [
+                "综合得分 0.45 低于阈值 0.8",
+                "平均测试案例得分: 0.61",
+                "对抗样本推断得分: 0.08"
+              ],
+              "user_input": "所有测试案例",
+              "assistant_response": "系统整体响应"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "performance_metrics": {
+    "avg_response_time": 4462.0,
+    "min_response_time": 4154,
+    "max_response_time": 5022,
+    "success_rate": 1.0,
+    "error_count": 0
+  },
+  "problems_summary": {
+    "total_problems": 18,
+    "serious_problems_count": 18,
+    "by_dimension": {
+      "功能性能": 6,
+      "用户体验": 2,
+      "业务价值": 1,
+      "技术质量": 9
+    },
+    "by_severity": {
+      "critical": [
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "准确性不足的general对话",
+          "score": 0.0,
+          "deduction_items": [
+            "对话类型: general",
+            "精确匹配(EM): 0.00",
+            "F1分数: 0.62",
+            "ROUGE-L分数: 0.00",
+            "回答与参考回答差异较大"
+          ],
+          "user_input": "华东区昨天卖了多少钱？",
+          "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+        },
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "准确性不足的general对话",
+          "score": 0.0,
+          "deduction_items": [
+            "对话类型: general",
+            "精确匹配(EM): 0.00",
+            "F1分数: 0.98",
+            "ROUGE-L分数: 0.67",
+            "回答与参考回答差异较大"
+          ],
+          "user_input": "怎么退货？",
+          "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+        },
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "准确性不足的general对话",
+          "score": 0.0,
+          "deduction_items": [
+            "对话类型: general",
+            "精确匹配(EM): 0.00",
+            "F1分数: 0.46",
+            "ROUGE-L分数: 0.27",
+            "回答与参考回答差异较大"
+          ],
+          "user_input": "有优惠券吗？",
+          "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+        },
+        {
+          "dimension": "用户体验",
+          "problem_type": "满意度",
+          "problem_subtype": "缺乏用户评分数据",
+          "score": 0.0,
+          "deduction_items": [
+            "日志中未包含用户评分数据",
+            "无法准确评估用户满意度",
+            "建议在系统中添加用户反馈机制"
+          ],
+          "user_input": "满意度相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "业务价值",
+          "problem_type": "转化率",
+          "problem_subtype": "转化率不足",
+          "score": 0.0,
+          "deduction_items": [
+            "转化率 0.00 低于阈值 0.4",
+            "转化机会数: 0",
+            "成功转化数: 0",
+            "需要优化转化策略和话术"
+          ],
+          "user_input": "转化率相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "对抗样本处理能力不足",
+          "score": 0.08333333333333333,
+          "deduction_items": [
+            "响应不够专业",
+            "响应不够完整详细",
+            "整体稳健性指标不足，平均得分: 0.08",
+            "响应不够正确准确",
+            "响应不够清晰明确"
+          ],
+          "user_input": "系统生成的对抗样本",
+          "assistant_response": "基于现有响应的推断"
+        }
+      ],
+      "high": [
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "整体准确性不足",
+          "score": 0.3994837642073059,
+          "deduction_items": [
+            "准确性得分 0.40 低于阈值 0.8",
+            "EM得分: 0.00",
+            "F1得分: 0.69",
+            "ROUGE-L得分: 0.31",
+            "回答与参考回答存在较大差异"
+          ],
+          "user_input": "功能准确性相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能相关性",
+          "problem_subtype": "相关性不足的general对话",
+          "score": "0.41411936",
+          "deduction_items": [
+            "对话类型: general",
+            "语义相似度: 0.41",
+            "回答与用户问题相关性不够",
+            "可能需要改进语义理解能力"
+          ],
+          "user_input": "华东区昨天卖了多少钱？",
+          "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "整体稳健性不足",
+          "score": 0.4543333333333333,
+          "deduction_items": [
+            "综合得分 0.45 低于阈值 0.8",
+            "平均测试案例得分: 0.61",
+            "对抗样本推断得分: 0.08"
+          ],
+          "user_input": "所有测试案例",
+          "assistant_response": "系统整体响应"
+        }
+      ],
+      "medium": [
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能相关性",
+          "problem_subtype": "整体相关性不足",
+          "score": 0.6223902106285095,
+          "deduction_items": [
+            "相关性得分 0.62 低于阈值 0.7",
+            "平均相似度: 0.62",
+            "回答与用户问题相关性不够",
+            "可能需要改进语义理解能力"
+          ],
+          "user_input": "功能相关性相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "用户体验",
+          "problem_type": "满意度",
+          "problem_subtype": "整体满意度不足",
+          "score": 0.6933333333333334,
+          "deduction_items": [
+            "满意度得分 0.69 低于阈值 0.75",
+            "平均用户评分: 0.00",
+            "情感分析得分: 0.50",
+            "响应质量得分: 0.98",
+            "需要提升用户满意度和情感体验"
+          ],
+          "user_input": "满意度相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "错误处理能力不足",
+          "score": 0.6,
+          "deduction_items": [
+            "未提供替代解决方案"
+          ],
+          "user_input": "华东区昨天卖了多少钱？",
+          "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "格式鲁棒性不足",
+          "score": 0.5,
+          "deduction_items": [
+            "响应缺乏结构化格式（如加粗、列表）",
+            "响应内容过短，可能不够详细",
+            "响应缺乏明确的分段和换行"
+          ],
+          "user_input": "华东区昨天卖了多少钱？",
+          "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "边界情况处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "测试案例不属于边界情况，无法评估边界情况处理能力"
+          ],
+          "user_input": "华东区昨天卖了多少钱？",
+          "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "错误处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "未提供替代解决方案",
+            "缺少明确的错误提示和道歉"
+          ],
+          "user_input": "怎么退货？",
+          "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "边界情况处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "测试案例不属于边界情况，无法评估边界情况处理能力"
+          ],
+          "user_input": "怎么退货？",
+          "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "错误处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "未提供替代解决方案",
+            "缺少明确的错误提示和道歉"
+          ],
+          "user_input": "有优惠券吗？",
+          "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "边界情况处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "测试案例不属于边界情况，无法评估边界情况处理能力"
+          ],
+          "user_input": "有优惠券吗？",
+          "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+        }
+      ],
+      "low": []
+    },
+    "top_problems": [
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "准确性不足的general对话",
+        "score": 0.0,
+        "deduction_items": [
+          "对话类型: general",
+          "精确匹配(EM): 0.00",
+          "F1分数: 0.62",
+          "ROUGE-L分数: 0.00",
+          "回答与参考回答差异较大"
+        ],
+        "user_input": "华东区昨天卖了多少钱？",
+        "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "准确性不足的general对话",
+        "score": 0.0,
+        "deduction_items": [
+          "对话类型: general",
+          "精确匹配(EM): 0.00",
+          "F1分数: 0.98",
+          "ROUGE-L分数: 0.67",
+          "回答与参考回答差异较大"
+        ],
+        "user_input": "怎么退货？",
+        "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "准确性不足的general对话",
+        "score": 0.0,
+        "deduction_items": [
+          "对话类型: general",
+          "精确匹配(EM): 0.00",
+          "F1分数: 0.46",
+          "ROUGE-L分数: 0.27",
+          "回答与参考回答差异较大"
+        ],
+        "user_input": "有优惠券吗？",
+        "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+      },
+      {
+        "dimension": "用户体验",
+        "problem_type": "满意度",
+        "problem_subtype": "缺乏用户评分数据",
+        "score": 0.0,
+        "deduction_items": [
+          "日志中未包含用户评分数据",
+          "无法准确评估用户满意度",
+          "建议在系统中添加用户反馈机制"
+        ],
+        "user_input": "满意度相关问题",
+        "assistant_response": "无回复数据"
+      },
+      {
+        "dimension": "业务价值",
+        "problem_type": "转化率",
+        "problem_subtype": "转化率不足",
+        "score": 0.0,
+        "deduction_items": [
+          "转化率 0.00 低于阈值 0.4",
+          "转化机会数: 0",
+          "成功转化数: 0",
+          "需要优化转化策略和话术"
+        ],
+        "user_input": "转化率相关问题",
+        "assistant_response": "无回复数据"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "对抗样本处理能力不足",
+        "score": 0.08333333333333333,
+        "deduction_items": [
+          "响应不够专业",
+          "响应不够完整详细",
+          "整体稳健性指标不足，平均得分: 0.08",
+          "响应不够正确准确",
+          "响应不够清晰明确"
+        ],
+        "user_input": "系统生成的对抗样本",
+        "assistant_response": "基于现有响应的推断"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "整体准确性不足",
+        "score": 0.3994837642073059,
+        "deduction_items": [
+          "准确性得分 0.40 低于阈值 0.8",
+          "EM得分: 0.00",
+          "F1得分: 0.69",
+          "ROUGE-L得分: 0.31",
+          "回答与参考回答存在较大差异"
+        ],
+        "user_input": "功能准确性相关问题",
+        "assistant_response": "无回复数据"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能相关性",
+        "problem_subtype": "相关性不足的general对话",
+        "score": "0.41411936",
+        "deduction_items": [
+          "对话类型: general",
+          "语义相似度: 0.41",
+          "回答与用户问题相关性不够",
+          "可能需要改进语义理解能力"
+        ],
+        "user_input": "华东区昨天卖了多少钱？",
+        "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "整体稳健性不足",
+        "score": 0.4543333333333333,
+        "deduction_items": [
+          "综合得分 0.45 低于阈值 0.8",
+          "平均测试案例得分: 0.61",
+          "对抗样本推断得分: 0.08"
+        ],
+        "user_input": "所有测试案例",
+        "assistant_response": "系统整体响应"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "格式鲁棒性不足",
+        "score": 0.5,
+        "deduction_items": [
+          "响应缺乏结构化格式（如加粗、列表）",
+          "响应内容过短，可能不够详细",
+          "响应缺乏明确的分段和换行"
+        ],
+        "user_input": "华东区昨天卖了多少钱？",
+        "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "边界情况处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "测试案例不属于边界情况，无法评估边界情况处理能力"
+        ],
+        "user_input": "华东区昨天卖了多少钱？",
+        "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "错误处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "未提供替代解决方案",
+          "缺少明确的错误提示和道歉"
+        ],
+        "user_input": "怎么退货？",
+        "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "边界情况处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "测试案例不属于边界情况，无法评估边界情况处理能力"
+        ],
+        "user_input": "怎么退货？",
+        "assistant_response": "您好！关于退货问题，我需要先了解一些具体情况才能为您提供准确的指导：\n\n1. **订单信息**：您能提供订单号吗？或者我可以帮您查询您的订单列表\n2. **退货原因**：是因为商品质量问题、发错货，还是其他原因呢？\n3. **商品状态**：商品是否已经收到？包装和吊牌是否完好？\n\n如果您方便的话，也可以直接告诉我订单号，我来帮您查看具体的退货政策和流程。\n\n需要我先帮您查询一下您的订单列表吗？"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "错误处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "未提供替代解决方案",
+          "缺少明确的错误提示和道歉"
+        ],
+        "user_input": "有优惠券吗？",
+        "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "边界情况处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "测试案例不属于边界情况，无法评估边界情况处理能力"
+        ],
+        "user_input": "有优惠券吗？",
+        "assistant_response": "您好！关于优惠券的发放和使用，我需要查询一下您的账户信息或者当前的促销活动。请问您是想了解哪种类型的优惠券呢？例如：\n\n1. **新用户优惠券**\n2. **节日促销优惠券** \n3. **特定商品优惠券**\n4. **会员专属优惠券**\n\n另外，如果您能提供您的用户ID或者手机号，我可以帮您查看账户中是否有可用的优惠券。\n\n您也可以直接在我们的APP或网站的\"我的-优惠券\"页面查看当前可用的优惠"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "错误处理能力不足",
+        "score": 0.6,
+        "deduction_items": [
+          "未提供替代解决方案"
+        ],
+        "user_input": "华东区昨天卖了多少钱？",
+        "assistant_response": "很抱歉，查询销售数据需要您先登录并验证身份。请您先完成登录，确保您有权限访问相关销售数据。如果您已经登录但仍然遇到问题，请联系管理员确认您的权限设置。"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能相关性",
+        "problem_subtype": "整体相关性不足",
+        "score": 0.6223902106285095,
+        "deduction_items": [
+          "相关性得分 0.62 低于阈值 0.7",
+          "平均相似度: 0.62",
+          "回答与用户问题相关性不够",
+          "可能需要改进语义理解能力"
+        ],
+        "user_input": "功能相关性相关问题",
+        "assistant_response": "无回复数据"
+      },
+      {
+        "dimension": "用户体验",
+        "problem_type": "满意度",
+        "problem_subtype": "整体满意度不足",
+        "score": 0.6933333333333334,
+        "deduction_items": [
+          "满意度得分 0.69 低于阈值 0.75",
+          "平均用户评分: 0.00",
+          "情感分析得分: 0.50",
+          "响应质量得分: 0.98",
+          "需要提升用户满意度和情感体验"
+        ],
+        "user_input": "满意度相关问题",
+        "assistant_response": "无回复数据"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "conversion_info": {
+    "source_file": "neijing_qa_results.json",
+    "conversion_time": "2026-02-13T22:52:26.855126",
+    "total_qa_pairs": 264,
+    "total_chapters": 3,
+    "system_prompt": "你是一位精通黄帝内经的中医，在回答有关皇帝内经的问题时，请务必遵循循序渐进的原则：先在内部梳理关键信息和可能的风险点（思考过程），再给出专业建议。"
+  },
+  "chapter_distribution": {
+    "上古天真论篇第一": 2,
+    "六节藏象论篇第九": 5,
+    "移精变气论篇第十三": 257
+  },
+  "generated_files": [
+    "neijing_qa_messages_20260213_225226.jsonl",
+    "neijing_qa_messages_array_20260213_225226.json",
+    "neijing_qa_messages_with_chapter_20260213_225226.jsonl"
+  ],
+  "format_spec": {
+    "type": "messages",
+    "structure": {
+      "messages": [
+        {
+          "role": "system",
+          "content": "系统提示词"
+        },
+        {
+          "role": "user",
+          "content": "用户问题"
+        },
+        {
+          "role": "assistant",
+          "content": "助手回答"
+        }
+      ]
+    }
+  }
+}

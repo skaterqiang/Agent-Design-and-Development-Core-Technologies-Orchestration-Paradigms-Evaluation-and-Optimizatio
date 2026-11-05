@@ -1,0 +1,27 @@
+@startuml
+skinparam class {
+    BackgroundColor #EEE
+    BorderColor #333
+    ArrowColor #333
+    FontSize 13
+}
+
+abstract class "BaseProblem\n基础问题" as BaseProblem {
+    - id: string
+    - description: string
+    - severity: int
+}
+
+class "BusinessProblem\n业务问题" as BusinessProblem
+class "UXProblem\n用户体验问题" as UXProblem
+class "FunctionalProblem\n功能问题" as FunctionalProblem
+class "RobustProblem\n鲁棒性问题" as RobustProblem
+class "SecurityProblem\n安全问题" as SecurityProblem
+
+BaseProblem <|-- BusinessProblem
+BaseProblem <|-- UXProblem
+BaseProblem <|-- FunctionalProblem
+BaseProblem <|-- RobustProblem
+BaseProblem <|-- SecurityProblem
+
+@enduml

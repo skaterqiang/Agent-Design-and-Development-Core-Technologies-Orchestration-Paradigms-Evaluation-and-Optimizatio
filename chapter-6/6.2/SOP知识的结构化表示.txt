@@ -1,0 +1,46 @@
+# SOP知识的结构化表示（示例）
+sop_knowledge = {
+    "domain": "customer_service",
+    "sub_domain": "complaint_handling",
+    "scenario": "damaged_goods",
+    "sop_id": "CS-SOP-001",
+    "version": "1.0",
+    "objective": "标准化处理商品损坏投诉，确保用户体验和可追溯性",
+    "applicable_roles": ["智能客服", "一线人工客服"],
+    "steps": [
+        {
+            "step_number": 1,
+            "name": "安抚情绪与承诺负责",
+            "required_keywords": ["抱歉", "理解", "记录", "处理"],
+            "standard_phrases": [
+                "非常抱歉给您带来了不愉快的购物体验！",
+                "我完全理解您的心情，收到损坏的商品确实令人失望。",
+                "请您放心，我会立即为您记录并处理这个问题。"
+            ],
+            "mandatory_actions": ["表达歉意", "共情认可", "明确承诺"],
+            "transition_phrase": "为了更快地为您解决，我需要向您核实一些信息。"
+        },
+        {
+            "step_number": 2,
+            "name": "结构化信息收集与工单创建",
+            "required_keywords": ["工单", "记录", "信息", "创建"],
+            "mandatory_actions": ["创建工单", "记录信息"],
+            "information_checklist": [
+                "订单编号",
+                "损坏商品名称和数量",
+                "损坏情况文字描述",
+                "损坏照片（1-3张）",
+                "期望解决方案"
+            ],
+            "standard_phrases": [
+                "好的，我已经为您创建了正式的售后服务工单，工单号是[XXXX]。",
+                "您提供的信息我已详细记录在案，后续处理都将基于此工单进行。"
+            ]
+        },
+        # ... 其他步骤
+    ],
+    "quality_metrics": {
+        "keyword_coverage_threshold": 0.9,  # 关键词覆盖度阈值
+        "step_completeness_threshold": 1.0,  # 步骤完整性阈值
+        "response_time_limit": "30秒"  # 响应时间限制
+    }}

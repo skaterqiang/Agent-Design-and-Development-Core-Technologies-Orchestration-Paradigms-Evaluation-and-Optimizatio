@@ -1,0 +1,230 @@
+# =============================================================================
+# 《智能体设计与开发：核心技术、编排模式、评估与调优》配套代码 —— .gitignore
+#
+# 本仓库磁盘实测 282 个文件 / 约 23 MB，2026-10-31 复核。按本文件规则
+# 判定：256 个文件（约 6.9 MB）会入库，26 个文件（约 16.1 MB）被
+# 忽略；入库文件中无单文件超过 GitHub 的 100 MB 硬上限。
+# 文件数是精确值，MB 是约值——因为字节总数把 .gitignore 自身也算在内，而本文件
+# 每被修改一次这个数就变一次，写死必然过期。要精确值请自行实测：
+#   Get-ChildItem -Recurse -File | Measure-Object Length -Sum
+#
+# ⚠ 体积口径已变更。本文件上一版记录的是 9.05 GB / 379 个文件，其中 98% 是
+#   chapter-6 的两个训练产物目录（4.8 GB 的 optimizer.pt 与 2.4 GB ×2 的
+#   model.safetensors）。2026-10-31 09:57，这些训练产物被仓库以外的进程删除：
+#   6.5.2/output 与 6.5.4/output 现为空目录，4 个 memory.db 与 neijing_qa.db 亦已
+#   消失，合计减少 62 个文件 / 约 9.03 GB。因此第 3、4、5 节的规则已从「排除现存
+#   大文件」转为「防止重新生成后回流」的护栏——规则一条都没删，改的只是注释里的
+#   实测数字与判定依据。
+#
+# 以下规则按「机密 / 版权 / 体积 / 可再生」分类，每节注明判定依据与实测数字。
+# 文件末尾（第 9 节）列出「刻意不忽略」的清单，避免误伤 README 要求读者查看的
+# 样例产物。
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# 1. 机密：API 密钥与环境变量
+#    common/config.py 读取 TONGYI_API_KEY；A2A/{trip,flight}/langgraph.json 声明了
+#    "env": ".env"（该文件当前不存在，一旦创建即含真实密钥）。
+#    密钥进入 git 历史后无法靠删除文件撤销，必须重写历史。
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.template
+*.key
+*.pem
+secrets.json
+credentials.json
+
+
+# -----------------------------------------------------------------------------
+# 2. 版权内容：图书正文 PDF（机械工业出版社，239 页）
+#    用前导 / 锚定仓库根目录。该 PDF 当前已不在磁盘上（本规则作为防回流的护栏，
+#    若日后重新放入即自动生效）。chapter-2/2.4.5/测试.pdf（1.4 KB，PDF 技能脚本
+#    的测试样例，README 第 432 行的命令要用）不受影响，仍正常入库。
+# -----------------------------------------------------------------------------
+/智能体设计与开发.pdf
+
+
+# -----------------------------------------------------------------------------
+# 3. 模型权重与训练产物（现为护栏：磁盘上已无匹配文件）
+#    2026-10-31 09:57 复核：chapter-6/6.5.2/output/ 与 chapter-6/6.5.4/output/
+#    均已成为空目录（git 不跟踪空目录，两者都不会入库），且 *.safetensors / *.pt /
+#    *.pth / *.ckpt / *.bin / checkpoint-*/ 在整棵树上命中 0 个文件。本节规则一条
+#    都不删，作用转为「读者重跑训练脚本后，产物不会回流进 git」。
+#    上一版的实测值保留如下，供判断重跑后的体积量级：
+#      6.5.2/output/ = 8.9 GB / 28 个文件
+#        其中 checkpoint-24/optimizer.pt 约 4.8 GB、model.safetensors 约 2.4 GB ×2
+#      6.5.4/output/ = 58.4 MB / 30 个文件
+#        其中 checkpoint-15/optimizer.pt 38.8 MB、adapter_model.safetensors 19.3 MB
+#    6.5.2/output/ 整目录忽略：去掉权重后剩下的 checkpoint 骨架（config、
+#    tokenizer、rng_state 三类文件，此处是并列清单而非路径）对读者无用，且
+#    neijing_similarity_results.json 可由 finetune_neijing_embedding.py 重新生成。
+#    6.5.4/output/ 只忽略权重与 checkpoint-*/，刻意保留 images/ 下的 loss /
+#    token_acc 曲线图（README 第 550 行要求可直接查看）——但该 images/ 已随本次
+#    删除一并消失，15 张曲线图当前不存在，这条保留意图暂时没有对象。
+#    ⚠ README 第 550 行仍写着「6.5.2/output/ 与 6.5.4/output/ 下已随书提供训练
+#      产物（checkpoint、loss 曲线图），可直接查看」，第 555 行仍称「其中 98% 的
+#      体积是这两个训练产物目录」，第 557 行仍称「会失去随书提供的 checkpoint」。
+#      这三处承诺在删除后已不成立。需由作者决定是改写 README 还是重新生成产物；
+#      .gitignore 不代替 README 表态，此处仅登记矛盾。
+# -----------------------------------------------------------------------------
+chapter-6/6.5.2/output/
+checkpoint-*/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.gguf
+*.ggml
+events.out.tfevents.*
+runs/
+wandb/
+mlruns/
+
+
+# -----------------------------------------------------------------------------
+# 4. Python 字节码、虚拟环境、构建与打包产物
+#    字节码：2026-10-30 应用户要求删除了全部 __pycache__/，当前 .pyc / .pyo 命中
+#    0 个（上一版记录为 34 个 .pyc、分布在 12 个 __pycache__/ 下，最多的一处是
+#    chapter-5/5.4/__pycache__/，17 个）。忽略不会删除磁盘文件，只是不纳入版本
+#    控制；Python 会按需重新生成，故规则保留。
+#    注意 build/ 只匹配目录，不影响 chapter-2/2.5/build_2_5_skills_docx.py。
+#    打包快照：/*.zip 用前导 / 锚定仓库根目录，只忽略根级的整仓快照——当前有 1 个
+#    5.67 MB / 356 条目、内含 .gitignore 自身的 zip，即仓库自己的压缩包。让它入库
+#    会自我嵌套，且每次重新打包都会新增一个带日期的副本。
+#    ⚠ 该规则刻意不影响 chapter-2/2.4.2/ 下的 2 个 zip（RAG WorkFlow.zip 1454 B、
+#      RAG WorkFlow_with_gaode.zip 1715 B）：它们是书稿素材，必须入库，见第 9 节。
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.python-version
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+/*.zip
+
+
+# -----------------------------------------------------------------------------
+# 5. 运行时状态：LangGraph 与 SQLite 检查点
+#    .langgraph_api/  由 `langgraph dev` 自动创建，A2A/{trip,flight} 下各 7 个
+#                     .pckl，合计 14 个，每次启动都会改写
+#    memory.db        由 chapter-4/4.8.2 与 4.8.3 的 code_generator.py 运行时在
+#                     用户输入的项目名下创建（db_path = f"{project_folder}/memory.db"）。
+#                     2026-10-31 复核：磁盘上现存 0 个。上一版记录为 4 个 / 合计
+#                     71.8 MB / 最大 55.2 MB（即 chapter-4/4.8.3/neijing_qa/memory.db，
+#                     是把项目名输成 neijing_qa 时留下的，该目录内无脚本引用它）。
+#                     同批消失的还有 4.8.3/neijing_qa_extractor/neijing_qa.db。
+#                     规则保留为护栏：读者运行 code_generator.py 后会重新生成。
+#    chat_history.db  由 chapter-2/2.4.1/SqlChatMessageHistory.py 创建
+#                     （DB_PATH = "chat_history.db"），当前磁盘上为 0 个，规则为护栏
+# -----------------------------------------------------------------------------
+.langgraph_api/
+memory.db
+chat_history.db
+*.db-wal
+*.db-shm
+*.db-journal
+
+
+# -----------------------------------------------------------------------------
+# 6. 日志与测试报告
+#    *.log 现存 4 个：chapter-3/ut_test.log、chapter-4/4.8.2/agent_<时间戳>.log ×2、
+#    chapter-4/4.8.5/smart-supply-chain-system/logs/system.log
+#    logs/ 现存 1 个：smart-supply-chain-system/logs/（main.py 的 FileHandler 写入）
+#    测试报告由测试脚本每次运行重新生成，且内含本机绝对路径（D:\Users\...），
+#    不宜入库：
+#      agent_scope_skills_test_report.txt ← 2.4.5/test_agent_scope_skills.py:436
+#      pdf_skills_test_report_<时间戳>.json ← 2.4.5/test_pdf_skills_progressive.py:273
+# -----------------------------------------------------------------------------
+*.log
+logs/
+agent_scope_skills_test_report.txt
+pdf_skills_test_report_*.json
+
+
+# -----------------------------------------------------------------------------
+# 7. 可再生的数据产物（由仓库内脚本生成，生成命令见 README 第 505～510、542 行）
+#    neijing_qa_messages_*.jsonl ← 4.8.3/neijing_qa/convert_to_messages_format.py
+#      现存 2 个（各 264 行）：..._20260213_225226.jsonl 与
+#      ..._with_chapter_20260213_225226.jsonl
+#    chapter-6/6.5.4/data2/*.jsonl ← 6.5.4/data2/data.py
+#      注意：data.py 里写的是 DATA_PATH = './data'，而磁盘上的目录叫 data2/
+#      （data/ 已不存在），说明该目录被手工改名过。重跑 data.py 会生成 data/，
+#      不会覆盖 data2/。现存 train.jsonl 2166 行 / 8.4 MiB、val.jsonl 241 行。
+#      data.py 需联网从 ModelScope 拉取 krisfu/delicate_medical_r1_data 数据集。
+#    chapter-6/6.5.4/neijing_data/*.jsonl ← convert_neijing_for_training.py 或
+#      simple_convert.py（两者都写 DATA_PATH='./neijing_data'）。
+#      现存 train.jsonl 237 行、val.jsonl 27 行，是 train.forwindows.txt 里
+#      swift sft --dataset 的实际输入。
+# -----------------------------------------------------------------------------
+neijing_qa_messages_*.jsonl
+chapter-6/6.5.4/data2/*.jsonl
+chapter-6/6.5.4/neijing_data/*.jsonl
+
+
+# -----------------------------------------------------------------------------
+# 8. 操作系统与编辑器
+#    .vscode/ 当前仅含 settings.json（python-envs.defaultEnvManager），属个人
+#    环境偏好，不入库。
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+# -----------------------------------------------------------------------------
+# 9. 刻意「不忽略」的清单（兑现文件开头承诺的「文件末尾列出刻意不忽略的清单」）
+#    以下 63 个文件形态上像生成产物，但都是 README 或书稿正文直接引用、读者需要
+#    打开查看的样例。已用 git check-ignore --no-index 在一次性空仓库里对全树 282
+#    个文件路径逐条判定，确认本节所列与「被忽略集合」的交集为空。
+#    新增任何规则前请先比对本节，避免误伤。
+#
+#      1 个  images/book_cover.png（1625284 B ≈ 1.55 MiB）
+#              README 第 4 行 <img src="images/book_cover.png"> 引用的封面图
+#      1 个  chapter-2/2.4.5/测试.pdf（1478 B）
+#              README 第 432 行 check_fillable_fields.py 的输入样例。
+#              第 2 节忽略的是仓库根的图书正文 PDF，与此文件无关。
+#     48 个  chapter-5/5.4/evaluation_report_*.{csv,html,json}
+#              16 个时间戳 × 3 种格式：45 个直接在 5.4/ 下，3 个在
+#              5.4/generated report/ 下。README 第 526 行称「目录下已有的
+#              evaluation_report_*.csv/html/json 是历史运行产物，可直接打开查看
+#              报告样式」。
+#      5 个  chapter-2/2.5/output/
+#              3 个 .docx 成品样例 + sample_spec.json + _last_spec.json，
+#              是 build_2_5_skills_docx.py 的输出示例。
+#      2 个  chapter-2/2.4.2/RAG WorkFlow.zip（1454 B）、
+#              RAG WorkFlow_with_gaode.zip（1715 B）。书稿素材，不被第 4 节的
+#              /*.zip 命中（该规则有前导 /，只作用于仓库根）。
+#      4 个  chapter-6/6.5.2/neijing_{all_below_threshold,below_threshold,
+#              low_quality_pairs,medium_quality_pairs}_20260214_200701.*
+#              嵌入模型评估的输出样例，合计 227160 B。
+#      2 个  chapter-4/4.8.3/{neijing_qa,neijing_qa_extractor}/huangdi_neijing.htm
+#              各 361262 B，《黄帝内经》原始语料，是抽取脚本的输入。
+#
+#    另有 5 个空目录（git 不跟踪空目录，它们既不会入库、也不需要忽略规则）。
+#    路径逐行单列，避免被注释换行截断后无法复制：
+#      chapter-4/4.3/4.3.4
+#      chapter-4/4.8.5/smart-supply-chain-system/docs
+#      chapter-6/6.5.2/output
+#      chapter-6/6.5.2/runs
+#      chapter-6/6.5.4/output
+#    其中 6.5.2/output 与 6.5.4/output 是本次删除留下的空壳（目录 mtime 为
+#    2026-10-31 09:57）；另外 3 个的 mtime 分别是 2025-12-08、2026-02-13、
+#    2026-02-14，说明它们本来就是空的，与本次删除无关。

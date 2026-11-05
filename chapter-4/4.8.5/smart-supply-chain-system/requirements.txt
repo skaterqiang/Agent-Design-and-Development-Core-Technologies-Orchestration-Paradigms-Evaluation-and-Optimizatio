@@ -1,0 +1,27 @@
+# 智能供应链管理系统依赖
+# 第 4 章 4.8.5 节（书稿目录中无此节号，实际内容对应 4.8.4 的供应链案例）
+fastapi>=0.104.1
+uvicorn>=0.24.0
+pydantic>=2.5.0
+sqlalchemy>=2.0.23
+asyncpg>=0.28.0
+redis>=5.0.1
+celery>=5.3.4
+requests>=2.31.0
+pandas>=2.1.3
+numpy>=1.26.2
+matplotlib>=3.8.2
+plotly>=5.18.0
+networkx>=3.2.1
+scikit-learn>=1.3.2
+pyyaml>=6.0.1
+python-dotenv>=1.0.0
+loguru>=0.7.2
+aiohttp>=3.9.1
+websockets>=12.0
+cryptography>=41.0.7
+pyjwt>=2.8.0
+apscheduler>=3.10.4
+# src/dynamic_cost_optimization.py 使用 scipy.optimize.minimize，
+# 书稿原配方漏了它，此处补上
+scipy>=1.11

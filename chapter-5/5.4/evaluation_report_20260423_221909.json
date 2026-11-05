@@ -1,0 +1,1327 @@
+{
+  "report_id": "EVAL-20260423221909",
+  "generated_at": "2026-04-23T22:19:09.259948",
+  "conversation_count": 3,
+  "summary": {
+    "total_score": 0.7224773346394135,
+    "dimension_scores": {
+      "功能性能": 0.6281244487980452,
+      "用户体验": 0.6319999999999999,
+      "业务价值": 1.0,
+      "技术质量": 0.6302
+    },
+    "ranking": {
+      "业务价值": 1.0,
+      "用户体验": 0.6319999999999999,
+      "技术质量": 0.6302
+    },
+    "recommendations": [
+      "需要提高准确性，使回答更接近参考标准",
+      "响应速度有优化空间",
+      "需要提升用户满意度，改善对话体验",
+      "需要提高系统稳健性，增强异常输入处理能力"
+    ]
+  },
+  "conversations": [
+    {
+      "session_id": "cust001_20260423221825",
+      "user_id": "cust001",
+      "user_input": "我的订单123456到哪里了？",
+      "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-11 10:15:00 已发出，正在运输中\n- 2024-06-12 08:45:00 到达目的地配送中心\n\n您的包裹已经到达目的地配送中心，预计将在6月15日前送达。如有其他问题，欢迎随时咨询！",
+      "timestamp": "2026-04-23T22:18:25.139968",
+      "response_time_ms": 9463,
+      "metadata": {
+        "user_type": "customer",
+        "department": null,
+        "current_order_id": null,
+        "complaint_escalated": false
+      },
+      "test_case": "订单查询"
+    },
+    {
+      "session_id": "cust002_20260423221836",
+      "user_id": "cust002",
+      "user_input": "智能手机A和智能手机B哪个拍照更好？",
+      "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**：f/1.6（更大的光圈可以进更多光线，理论上在弱光环境下表现更好）\n\n### 对比分析：\n- 如果您更注重**照片的整体画质、色彩还原和低光表现**，智能手机A搭载的索尼IMX766传感器可能会带来更稳定和自然的效果。\n- 如果您更看重**高像素带来的细节表现力**，尤其是在需要裁剪或打印大尺寸照片时，智能手机B的1亿像素会更有优势。\n\n综合来看：\n- 日常使用和夜景拍摄：**智能手机A可能略胜一筹**。\n- 需要高解析力和细节保留：**智能手机B更具优势**。\n\n如果您有具体的使用场景（如经常拍夜景、人像或风景），我可以进一步帮您分析哪款更适合！",
+      "timestamp": "2026-04-23T22:18:36.497404",
+      "response_time_ms": 11253,
+      "metadata": {
+        "user_type": "customer",
+        "department": null,
+        "current_order_id": null,
+        "complaint_escalated": false
+      },
+      "test_case": "产品比较"
+    },
+    {
+      "session_id": "cust003_20260423221839",
+      "user_id": "cust003",
+      "user_input": "我刚收到的商品有损坏，我要投诉！",
+      "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+      "timestamp": "2026-04-23T22:18:39.849202",
+      "response_time_ms": 3239,
+      "metadata": {
+        "user_type": "customer",
+        "department": null,
+        "current_order_id": null,
+        "complaint_escalated": false
+      },
+      "test_case": "投诉处理"
+    }
+  ],
+  "detailed_results": {
+    "functional": {
+      "dimension": "功能性能",
+      "overall_score": 0.6281244487980452,
+      "metrics": {
+        "accuracy": 0.42605765348162417,
+        "relevance": 0.7256712913513184,
+        "completeness": 0.7999999999999999
+      },
+      "strengths": [
+        "相关性良好",
+        "完整性良好"
+      ],
+      "improvements": [
+        "需要提高准确性，使回答更接近参考标准"
+      ],
+      "details": {
+        "accuracy": {
+          "em": 0.0,
+          "f1": 0.6534327148737602,
+          "rouge": 0.41171141883030016
+        },
+        "relevance": {
+          "avg_similarity": 0.7256712913513184
+        },
+        "completeness": {
+          "avg_completeness": 0.7999999999999999
+        }
+      },
+      "problems": {
+        "summary": {
+          "functional_accuracy": {
+            "count": 4,
+            "avg_score": 0.10651441337040604,
+            "min_score": 0.0,
+            "max_score": 0.42605765348162417,
+            "serious_problems": [
+              {
+                "problem_type": "准确性不足的order_query对话",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: order_query",
+                  "精确匹配(EM): 0.00",
+                  "F1分数: 0.86",
+                  "ROUGE-L分数: 0.56",
+                  "回答与参考回答差异较大"
+                ],
+                "user_input": "我的订单123456到哪里了？",
+                "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-11 10:15:00 已发出，正在运输中\n- 2024-06-12 08:45:00 到达目的地配送中心\n\n您的包裹已经到达目的地配送中心，预计将在6月15日前送达。如有其他问题，欢迎随时咨询！",
+                "conversation_type": "order_query",
+                "metric_type": "accuracy",
+                "reference_response": "您好！您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789\n\n**最新物流节点**：\n- 2024-06-12 08:45:00 到达目的地配送中心\n\n您的包裹已经到达目的地配送中心，很快就会安排派送。如有其他问题，欢迎随时咨询！",
+                "similarity_score": 0.0
+              },
+              {
+                "problem_type": "准确性不足的general对话",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: general",
+                  "精确匹配(EM): 0.00",
+                  "F1分数: 0.64",
+                  "ROUGE-L分数: 0.41",
+                  "回答与参考回答差异较大"
+                ],
+                "user_input": "智能手机A和智能手机B哪个拍照更好？",
+                "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**：f/1.6（更大的光圈可以进更多光线，理论上在弱光环境下表现更好）\n\n### 对比分析：\n- 如果您更注重**照片的整体画质、色彩还原和低光表现**，智能手机A搭载的索尼IMX766传感器可能会带来更稳定和自然的效果。\n- 如果您更看重**高像素带来的细节表现力**，尤其是在需要裁剪或打印大尺寸照片时，智能手机B的1亿像素会更有优势。\n\n综合来看：\n- 日常使用和夜景拍摄：**智能手机A可能略胜一筹**。\n- 需要高解析力和细节保留：**智能手机B更具优势**。\n\n如果您有具体的使用场景（如经常拍夜景、人像或风景），我可以进一步帮您分析哪款更适合！",
+                "conversation_type": "general",
+                "metric_type": "accuracy",
+                "reference_response": "根据您提供的参数，智能手机A和B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（以优秀的低光表现和色彩还原著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高分辨率，适合大幅裁剪或打印）\n- **传感器**：三星HM2\n- **光圈**：f/1.6（更大的光圈，理论上进光量更多，弱光表现可能更好）\n\n**综合对比**：\n- 如果您更注重**成像质量、色彩还原和稳定性**，智能手机A的索尼IMX766传感器在业界口碑较好。\n- 如果您更看重**高像素带来的细节表现和裁剪空间**，智能手机B的1亿像素会更有优势。\n\n实际拍照效果还会受到厂商算法调校的影响，建议有条件的话可以查看实际样张或到实体店体验。需要我帮您查询更多详细信息吗？",
+                "similarity_score": 0.0
+              },
+              {
+                "problem_type": "准确性不足的complaint对话",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: complaint",
+                  "精确匹配(EM): 0.00",
+                  "F1分数: 0.47",
+                  "ROUGE-L分数: 0.26",
+                  "回答与参考回答差异较大"
+                ],
+                "user_input": "我刚收到的商品有损坏，我要投诉！",
+                "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+                "conversation_type": "complaint",
+                "metric_type": "accuracy",
+                "reference_response": "感谢您的理解！为了尽快解决您的问题，请您提供以下详细信息：\n\n1. **商品损坏的具体情况** - 比如是外包装破损、商品本身有裂痕、功能故障等\n2. **商品损坏的照片**（如果方便的话）- 这会帮助我们更快地确认问题\n3. **您希望的解决方案** - 比如全额退款、免费换货，或者其他您认为合适的处理方式\n\n另外，如果您觉得需要更专业的协助，我可以立即为您转接高级客服专员。您看是希望我先帮您创建投诉工单，还是直接转接给专员呢？",
+                "similarity_score": 0.0
+              },
+              {
+                "problem_type": "整体准确性不足",
+                "score": 0.42605765348162417,
+                "threshold": 0.8,
+                "deduction_items": [
+                  "准确性得分 0.43 低于阈值 0.8",
+                  "EM得分: 0.00",
+                  "F1得分: 0.65",
+                  "ROUGE-L得分: 0.41",
+                  "回答与参考回答存在较大差异"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "conversation_type": "",
+                "metric_type": "",
+                "reference_response": "",
+                "similarity_score": 0.0
+              }
+            ]
+          },
+          "functional_completeness": {
+            "count": 1,
+            "avg_score": 0.4,
+            "min_score": 0.4,
+            "max_score": 0.4,
+            "serious_problems": [
+              {
+                "problem_type": "完整性不足的complaint对话",
+                "score": 0.4,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "对话类型: complaint",
+                  "完整性得分: 0.40",
+                  "缺失关键词: 工单, 记录, 联系",
+                  "目标关键词: 抱歉, 处理, 工单, 记录, 联系..."
+                ],
+                "user_input": "我刚收到的商品有损坏，我要投诉！",
+                "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+                "conversation_type": "complaint",
+                "metric_type": "completeness",
+                "reference_response": "",
+                "similarity_score": 0.0
+              }
+            ]
+          }
+        },
+        "total_problems": 5,
+        "has_serious_problems": true,
+        "detailed_problems": {
+          "functional_accuracy": [
+            {
+              "problem_type": "准确性不足的order_query对话",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: order_query",
+                "精确匹配(EM): 0.00",
+                "F1分数: 0.86",
+                "ROUGE-L分数: 0.56",
+                "回答与参考回答差异较大"
+              ],
+              "user_input": "我的订单123456到哪里了？",
+              "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1",
+              "conversation_type": "order_query",
+              "metric_type": "accuracy",
+              "reference_response": "您好！您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789\n\n**最新物流节点**：\n- 2024-06-12 08:45:00 到达目的地配送中心\n\n您的包裹已经到达目的地配送中心，很快就会安排派送。如有其他问题，欢"
+            },
+            {
+              "problem_type": "准确性不足的general对话",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: general",
+                "精确匹配(EM): 0.00",
+                "F1分数: 0.64",
+                "ROUGE-L分数: 0.41",
+                "回答与参考回答差异较大"
+              ],
+              "user_input": "智能手机A和智能手机B哪个拍照更好？",
+              "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**：",
+              "conversation_type": "general",
+              "metric_type": "accuracy",
+              "reference_response": "根据您提供的参数，智能手机A和B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（以优秀的低光表现和色彩还原著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高分辨率，适合大幅裁剪或打印）\n- **传感器**：三星HM2\n- **光圈**：f/1.6（更大的光圈，理论上进光量更多，弱光表现"
+            },
+            {
+              "problem_type": "准确性不足的complaint对话",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: complaint",
+                "精确匹配(EM): 0.00",
+                "F1分数: 0.47",
+                "ROUGE-L分数: 0.26",
+                "回答与参考回答差异较大"
+              ],
+              "user_input": "我刚收到的商品有损坏，我要投诉！",
+              "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+              "conversation_type": "complaint",
+              "metric_type": "accuracy",
+              "reference_response": "感谢您的理解！为了尽快解决您的问题，请您提供以下详细信息：\n\n1. **商品损坏的具体情况** - 比如是外包装破损、商品本身有裂痕、功能故障等\n2. **商品损坏的照片**（如果方便的话）- 这会帮助我们更快地确认问题\n3. **您希望的解决方案** - 比如全额退款、免费换货，或者其他您认为合适的处理方式\n\n另外，如果您觉得需要更专业的协助，我可以立即为您转接高级客服专员。您看是希望我先帮您创"
+            },
+            {
+              "problem_type": "整体准确性不足",
+              "score": 0.42605765348162417,
+              "threshold": 0.8,
+              "deduction_items": [
+                "准确性得分 0.43 低于阈值 0.8",
+                "EM得分: 0.00",
+                "F1得分: 0.65",
+                "ROUGE-L得分: 0.41",
+                "回答与参考回答存在较大差异"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            }
+          ],
+          "functional_completeness": [
+            {
+              "problem_type": "完整性不足的complaint对话",
+              "score": 0.4,
+              "threshold": 0.7,
+              "deduction_items": [
+                "对话类型: complaint",
+                "完整性得分: 0.40",
+                "缺失关键词: 工单, 记录, 联系",
+                "目标关键词: 抱歉, 处理, 工单, 记录, 联系..."
+              ],
+              "user_input": "我刚收到的商品有损坏，我要投诉！",
+              "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+              "conversation_type": "complaint",
+              "metric_type": "completeness"
+            }
+          ]
+        }
+      }
+    },
+    "user_experience": {
+      "dimension": "用户体验",
+      "overall_score": 0.6319999999999999,
+      "metrics": {
+        "efficiency": 0.72,
+        "satisfaction": 0.5733333333333333
+      },
+      "strengths": [
+        "响应效率良好"
+      ],
+      "improvements": [
+        "响应速度有优化空间",
+        "需要提升用户满意度，改善对话体验"
+      ],
+      "details": {
+        "efficiency": {
+          "overall_score": 0.72,
+          "p50_response_time": 9463.0,
+          "p95_response_time": 11074.0,
+          "completion_rate": 1.0,
+          "total_sessions": 3,
+          "completed_sessions": 3,
+          "response_time_stats": {
+            "min": 3239.0,
+            "max": 11253.0,
+            "mean": 7985.0,
+            "std": 3434.5705214286495
+          }
+        },
+        "satisfaction": {
+          "overall_score": 0.5733333333333333,
+          "avg_user_rating": 0.0,
+          "sentiment_score": 0.3333333333333333,
+          "rated_sessions": 0,
+          "total_sessions": 3,
+          "response_quality_score": 0.9333333333333332
+        }
+      },
+      "problems": {
+        "summary": {
+          "efficiency": {
+            "count": 1,
+            "avg_score": 0.72,
+            "min_score": 0.72,
+            "max_score": 0.72,
+            "serious_problems": [
+              {
+                "problem_type": "整体效率不足",
+                "score": 0.72,
+                "threshold": 0.8,
+                "deduction_items": [
+                  "效率得分 0.72 低于阈值 0.8",
+                  "P50响应时间: 9463ms",
+                  "P95响应时间: 11074ms",
+                  "会话完成率: 1.00",
+                  "响应速度或完成率需要优化"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "session_id": "",
+                "user_id": "",
+                "response_time_ms": 0.0,
+                "user_sentiment_score": 0.0,
+                "response_quality_score": 0.0
+              }
+            ]
+          },
+          "satisfaction": {
+            "count": 3,
+            "avg_score": 0.1911111111111111,
+            "min_score": 0.0,
+            "max_score": 0.5733333333333333,
+            "serious_problems": [
+              {
+                "problem_type": "缺乏用户评分数据",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "日志中未包含用户评分数据",
+                  "无法准确评估用户满意度",
+                  "建议在系统中添加用户反馈机制"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "session_id": "",
+                "user_id": "",
+                "response_time_ms": 0.0,
+                "user_sentiment_score": 0.0,
+                "response_quality_score": 0.0
+              },
+              {
+                "problem_type": "用户情感负面",
+                "score": 0.0,
+                "threshold": 0.5,
+                "deduction_items": [
+                  "用户情感分析得分: 0.00",
+                  "用户表达不满、愤怒或紧急情绪",
+                  "需要关注用户情绪并改进响应"
+                ],
+                "user_input": "我刚收到的商品有损坏，我要投诉！",
+                "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+                "session_id": "cust003_20260423221839",
+                "user_id": "cust003",
+                "response_time_ms": 0.0,
+                "user_sentiment_score": 0.0,
+                "response_quality_score": 0.0
+              },
+              {
+                "problem_type": "整体满意度不足",
+                "score": 0.5733333333333333,
+                "threshold": 0.75,
+                "deduction_items": [
+                  "满意度得分 0.57 低于阈值 0.75",
+                  "平均用户评分: 0.00",
+                  "情感分析得分: 0.33",
+                  "响应质量得分: 0.93",
+                  "需要提升用户满意度和情感体验"
+                ],
+                "user_input": "",
+                "assistant_response": "",
+                "session_id": "",
+                "user_id": "",
+                "response_time_ms": 0.0,
+                "user_sentiment_score": 0.0,
+                "response_quality_score": 0.0
+              }
+            ]
+          }
+        },
+        "total_problems": 4,
+        "has_serious_problems": true,
+        "detailed_problems": {
+          "efficiency": [
+            {
+              "problem_type": "整体效率不足",
+              "score": 0.72,
+              "threshold": 0.8,
+              "deduction_items": [
+                "效率得分 0.72 低于阈值 0.8",
+                "P50响应时间: 9463ms",
+                "P95响应时间: 11074ms",
+                "会话完成率: 1.00",
+                "响应速度或完成率需要优化"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            }
+          ],
+          "satisfaction": [
+            {
+              "problem_type": "缺乏用户评分数据",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "日志中未包含用户评分数据",
+                "无法准确评估用户满意度",
+                "建议在系统中添加用户反馈机制"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            },
+            {
+              "problem_type": "用户情感负面",
+              "score": 0.0,
+              "threshold": 0.5,
+              "deduction_items": [
+                "用户情感分析得分: 0.00",
+                "用户表达不满、愤怒或紧急情绪",
+                "需要关注用户情绪并改进响应"
+              ],
+              "user_input": "我刚收到的商品有损坏，我要投诉！",
+              "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+              "session_id": "cust003_20260423221839",
+              "user_id": "cust003"
+            },
+            {
+              "problem_type": "整体满意度不足",
+              "score": 0.5733333333333333,
+              "threshold": 0.75,
+              "deduction_items": [
+                "满意度得分 0.57 低于阈值 0.75",
+                "平均用户评分: 0.00",
+                "情感分析得分: 0.33",
+                "响应质量得分: 0.93",
+                "需要提升用户满意度和情感体验"
+              ],
+              "user_input": "",
+              "assistant_response": "无回复数据"
+            }
+          ]
+        }
+      }
+    },
+    "business_value": {
+      "dimension": "业务价值",
+      "overall_score": 1.0,
+      "metrics": {
+        "effectiveness": 1.0,
+        "intervention_rate": 1.0,
+        "conversion_rate": 1.0
+      },
+      "strengths": [
+        "问题解决率高，业务目标达成度好",
+        "人工干预率低，自动化程度高",
+        "转化率高，业务价值显著"
+      ],
+      "improvements": [],
+      "details": {
+        "effectiveness": {
+          "overall_score": 1.0,
+          "resolution_rate": 1.0,
+          "by_category": {
+            "order_query": {
+              "rate": 1.0,
+              "total": 1,
+              "solved": 1
+            },
+            "product_comparison": {
+              "rate": 1.0,
+              "total": 1,
+              "solved": 1
+            },
+            "complaint": {
+              "rate": 1.0,
+              "total": 1,
+              "solved": 1
+            }
+          },
+          "total_conversations": 3,
+          "solved_conversations": 3
+        },
+        "intervention": {
+          "rate": 0.0,
+          "total_conversations": 3,
+          "intervened_conversations": 0
+        },
+        "conversion": {
+          "rate": 1.0,
+          "opportunities": 1,
+          "conversions": 1
+        }
+      },
+      "problems": {
+        "summary": {},
+        "total_problems": 0,
+        "has_serious_problems": false,
+        "detailed_problems": {}
+      }
+    },
+    "technical_quality": {
+      "dimension": "技术质量",
+      "overall_score": 0.6302,
+      "metrics": {
+        "robustness": 0.4503333333333332,
+        "security": 0.9000000000000001
+      },
+      "strengths": [
+        "安全性高，隐私保护和访问控制完善"
+      ],
+      "improvements": [
+        "需要提高系统稳健性，增强异常输入处理能力"
+      ],
+      "details": {
+        "robustness": {
+          "overall_score": 0.4503333333333332,
+          "error_handling_score": 0.5333333333333333,
+          "format_robustness": 0.9333333333333332,
+          "edge_case_coverage": 0.5,
+          "total_tests": 3,
+          "test_cases": [
+            {
+              "test_case": "订单查询",
+              "error_handling": 0.5,
+              "format_robustness": 0.9999999999999999,
+              "edge_case_coverage": 0.5,
+              "overall": 0.6499999999999999
+            },
+            {
+              "test_case": "产品比较",
+              "error_handling": 0.5,
+              "format_robustness": 0.9999999999999999,
+              "edge_case_coverage": 0.5,
+              "overall": 0.6499999999999999
+            },
+            {
+              "test_case": "投诉处理",
+              "error_handling": 0.6,
+              "format_robustness": 0.7999999999999999,
+              "edge_case_coverage": 0.5,
+              "overall": 0.63
+            }
+          ],
+          "adversarial_examples": [
+            {
+              "original": "我的订单123456到哪里了？",
+              "perturbed": "我的订单  I234S6到哪里了？",
+              "type": "订单(\\d+)",
+              "expected": "应正确识别并处理格式异常的订单号"
+            },
+            {
+              "original": "我刚收到的商品有损坏，我要投诉！",
+              "perturbed": "我刚收到的商品有损坏，我要投诉！ 非常非常非常不满意！！！",
+              "type": "投诉",
+              "expected": "应保持专业并安抚用户情绪"
+            },
+            {
+              "original": "我的订单123456在哪里？",
+              "perturbed": "我的订单I23456在哪里？",
+              "type": "订单号混淆",
+              "expected": "应正确识别订单号并提供物流信息"
+            }
+          ]
+        },
+        "security": {
+          "overall_score": 0.9000000000000001,
+          "privacy_protection": 0.9,
+          "bias_detection": 0.9,
+          "access_control": 0.9,
+          "total_checks": 3,
+          "security_issues": [],
+          "score_breakdown": {
+            "privacy_scores": [
+              0.9,
+              0.9,
+              0.9
+            ],
+            "bias_scores": [
+              0.9,
+              0.9,
+              0.9
+            ],
+            "access_scores": [
+              0.9,
+              0.9,
+              0.9
+            ]
+          }
+        }
+      },
+      "problems": {
+        "summary": {
+          "robustness": {
+            "count": 8,
+            "avg_score": 0.44379166666666664,
+            "min_score": 0.0,
+            "max_score": 0.6,
+            "serious_problems": [
+              {
+                "problem_type": "错误处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "未正确处理不存在的订单查询",
+                  "未提供替代解决方案",
+                  "缺少明确的错误提示和道歉"
+                ],
+                "user_input": "我的订单123456到哪里了？",
+                "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-11 10:15:00 已发出，正在运输中\n- 2024-06-12 08:45:00 到达目的地配送中心\n\n您的包裹已经到达目的地配送中心，预计将在6月15日前送达。如有其他问题，欢迎随时咨询！",
+                "test_case": "订单查询"
+              },
+              {
+                "problem_type": "边界情况处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "测试案例不属于边界情况，无法评估边界情况处理能力"
+                ],
+                "user_input": "我的订单123456到哪里了？",
+                "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-11 10:15:00 已发出，正在运输中\n- 2024-06-12 08:45:00 到达目的地配送中心\n\n您的包裹已经到达目的地配送中心，预计将在6月15日前送达。如有其他问题，欢迎随时咨询！",
+                "test_case": "订单查询"
+              },
+              {
+                "problem_type": "错误处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "未提供替代解决方案",
+                  "缺少明确的错误提示和道歉"
+                ],
+                "user_input": "智能手机A和智能手机B哪个拍照更好？",
+                "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**：f/1.6（更大的光圈可以进更多光线，理论上在弱光环境下表现更好）\n\n### 对比分析：\n- 如果您更注重**照片的整体画质、色彩还原和低光表现**，智能手机A搭载的索尼IMX766传感器可能会带来更稳定和自然的效果。\n- 如果您更看重**高像素带来的细节表现力**，尤其是在需要裁剪或打印大尺寸照片时，智能手机B的1亿像素会更有优势。\n\n综合来看：\n- 日常使用和夜景拍摄：**智能手机A可能略胜一筹**。\n- 需要高解析力和细节保留：**智能手机B更具优势**。\n\n如果您有具体的使用场景（如经常拍夜景、人像或风景），我可以进一步帮您分析哪款更适合！",
+                "test_case": "产品比较"
+              },
+              {
+                "problem_type": "边界情况处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "测试案例不属于边界情况，无法评估边界情况处理能力"
+                ],
+                "user_input": "智能手机A和智能手机B哪个拍照更好？",
+                "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**：f/1.6（更大的光圈可以进更多光线，理论上在弱光环境下表现更好）\n\n### 对比分析：\n- 如果您更注重**照片的整体画质、色彩还原和低光表现**，智能手机A搭载的索尼IMX766传感器可能会带来更稳定和自然的效果。\n- 如果您更看重**高像素带来的细节表现力**，尤其是在需要裁剪或打印大尺寸照片时，智能手机B的1亿像素会更有优势。\n\n综合来看：\n- 日常使用和夜景拍摄：**智能手机A可能略胜一筹**。\n- 需要高解析力和细节保留：**智能手机B更具优势**。\n\n如果您有具体的使用场景（如经常拍夜景、人像或风景），我可以进一步帮您分析哪款更适合！",
+                "test_case": "产品比较"
+              },
+              {
+                "problem_type": "错误处理能力不足",
+                "score": 0.6,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "未提供替代解决方案"
+                ],
+                "user_input": "我刚收到的商品有损坏，我要投诉！",
+                "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+                "test_case": "投诉处理"
+              },
+              {
+                "problem_type": "边界情况处理能力不足",
+                "score": 0.5,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "测试案例不属于边界情况，无法评估边界情况处理能力"
+                ],
+                "user_input": "我刚收到的商品有损坏，我要投诉！",
+                "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。",
+                "test_case": "投诉处理"
+              },
+              {
+                "problem_type": "对抗样本处理能力不足",
+                "score": 0.0,
+                "threshold": 0.7,
+                "deduction_items": [
+                  "响应不够专业",
+                  "响应不够完整详细",
+                  "响应不够清晰明确",
+                  "响应不够正确准确",
+                  "整体稳健性指标不足，平均得分: 0.00"
+                ],
+                "user_input": "系统生成的对抗样本",
+                "assistant_response": "基于现有响应的推断",
+                "test_case": "对抗样本测试"
+              },
+              {
+                "problem_type": "整体稳健性不足",
+                "score": 0.4503333333333332,
+                "threshold": 0.8,
+                "deduction_items": [
+                  "综合得分 0.45 低于阈值 0.8",
+                  "平均测试案例得分: 0.64",
+                  "对抗样本推断得分: 0.00"
+                ],
+                "user_input": "所有测试案例",
+                "assistant_response": "系统整体响应",
+                "test_case": "整体评估"
+              }
+            ]
+          }
+        },
+        "total_problems": 8,
+        "has_serious_problems": true,
+        "detailed_problems": {
+          "robustness": [
+            {
+              "problem_type": "错误处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "未正确处理不存在的订单查询",
+                "未提供替代解决方案",
+                "缺少明确的错误提示和道歉"
+              ],
+              "user_input": "我的订单123456到哪里了？",
+              "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+            },
+            {
+              "problem_type": "边界情况处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "测试案例不属于边界情况，无法评估边界情况处理能力"
+              ],
+              "user_input": "我的订单123456到哪里了？",
+              "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+            },
+            {
+              "problem_type": "错误处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "未提供替代解决方案",
+                "缺少明确的错误提示和道歉"
+              ],
+              "user_input": "智能手机A和智能手机B哪个拍照更好？",
+              "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+            },
+            {
+              "problem_type": "边界情况处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "测试案例不属于边界情况，无法评估边界情况处理能力"
+              ],
+              "user_input": "智能手机A和智能手机B哪个拍照更好？",
+              "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+            },
+            {
+              "problem_type": "错误处理能力不足",
+              "score": 0.6,
+              "threshold": 0.7,
+              "deduction_items": [
+                "未提供替代解决方案"
+              ],
+              "user_input": "我刚收到的商品有损坏，我要投诉！",
+              "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+            },
+            {
+              "problem_type": "边界情况处理能力不足",
+              "score": 0.5,
+              "threshold": 0.7,
+              "deduction_items": [
+                "测试案例不属于边界情况，无法评估边界情况处理能力"
+              ],
+              "user_input": "我刚收到的商品有损坏，我要投诉！",
+              "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+            },
+            {
+              "problem_type": "对抗样本处理能力不足",
+              "score": 0.0,
+              "threshold": 0.7,
+              "deduction_items": [
+                "响应不够专业",
+                "响应不够完整详细",
+                "响应不够清晰明确",
+                "响应不够正确准确",
+                "整体稳健性指标不足，平均得分: 0.00"
+              ],
+              "user_input": "系统生成的对抗样本",
+              "assistant_response": "基于现有响应的推断"
+            },
+            {
+              "problem_type": "整体稳健性不足",
+              "score": 0.4503333333333332,
+              "threshold": 0.8,
+              "deduction_items": [
+                "综合得分 0.45 低于阈值 0.8",
+                "平均测试案例得分: 0.64",
+                "对抗样本推断得分: 0.00"
+              ],
+              "user_input": "所有测试案例",
+              "assistant_response": "系统整体响应"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "performance_metrics": {
+    "avg_response_time": 7985.0,
+    "min_response_time": 3239,
+    "max_response_time": 11253,
+    "success_rate": 1.0,
+    "error_count": 0
+  },
+  "problems_summary": {
+    "total_problems": 17,
+    "serious_problems_count": 16,
+    "by_dimension": {
+      "功能性能": 5,
+      "用户体验": 4,
+      "业务价值": 0,
+      "技术质量": 8
+    },
+    "by_severity": {
+      "critical": [
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "准确性不足的order_query对话",
+          "score": 0.0,
+          "deduction_items": [
+            "对话类型: order_query",
+            "精确匹配(EM): 0.00",
+            "F1分数: 0.86",
+            "ROUGE-L分数: 0.56",
+            "回答与参考回答差异较大"
+          ],
+          "user_input": "我的订单123456到哪里了？",
+          "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+        },
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "准确性不足的general对话",
+          "score": 0.0,
+          "deduction_items": [
+            "对话类型: general",
+            "精确匹配(EM): 0.00",
+            "F1分数: 0.64",
+            "ROUGE-L分数: 0.41",
+            "回答与参考回答差异较大"
+          ],
+          "user_input": "智能手机A和智能手机B哪个拍照更好？",
+          "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+        },
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "准确性不足的complaint对话",
+          "score": 0.0,
+          "deduction_items": [
+            "对话类型: complaint",
+            "精确匹配(EM): 0.00",
+            "F1分数: 0.47",
+            "ROUGE-L分数: 0.26",
+            "回答与参考回答差异较大"
+          ],
+          "user_input": "我刚收到的商品有损坏，我要投诉！",
+          "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+        },
+        {
+          "dimension": "用户体验",
+          "problem_type": "满意度",
+          "problem_subtype": "缺乏用户评分数据",
+          "score": 0.0,
+          "deduction_items": [
+            "日志中未包含用户评分数据",
+            "无法准确评估用户满意度",
+            "建议在系统中添加用户反馈机制"
+          ],
+          "user_input": "满意度相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "用户体验",
+          "problem_type": "满意度",
+          "problem_subtype": "用户情感负面",
+          "score": 0.0,
+          "deduction_items": [
+            "用户情感分析得分: 0.00",
+            "用户表达不满、愤怒或紧急情绪",
+            "需要关注用户情绪并改进响应"
+          ],
+          "user_input": "我刚收到的商品有损坏，我要投诉！",
+          "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "对抗样本处理能力不足",
+          "score": 0.0,
+          "deduction_items": [
+            "响应不够专业",
+            "响应不够完整详细",
+            "响应不够清晰明确",
+            "响应不够正确准确",
+            "整体稳健性指标不足，平均得分: 0.00"
+          ],
+          "user_input": "系统生成的对抗样本",
+          "assistant_response": "基于现有响应的推断"
+        }
+      ],
+      "high": [
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能准确性",
+          "problem_subtype": "整体准确性不足",
+          "score": 0.42605765348162417,
+          "deduction_items": [
+            "准确性得分 0.43 低于阈值 0.8",
+            "EM得分: 0.00",
+            "F1得分: 0.65",
+            "ROUGE-L得分: 0.41",
+            "回答与参考回答存在较大差异"
+          ],
+          "user_input": "功能准确性相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "功能性能",
+          "problem_type": "功能完整性",
+          "problem_subtype": "完整性不足的complaint对话",
+          "score": 0.4,
+          "deduction_items": [
+            "对话类型: complaint",
+            "完整性得分: 0.40",
+            "缺失关键词: 工单, 记录, 联系",
+            "目标关键词: 抱歉, 处理, 工单, 记录, 联系..."
+          ],
+          "user_input": "我刚收到的商品有损坏，我要投诉！",
+          "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "整体稳健性不足",
+          "score": 0.4503333333333332,
+          "deduction_items": [
+            "综合得分 0.45 低于阈值 0.8",
+            "平均测试案例得分: 0.64",
+            "对抗样本推断得分: 0.00"
+          ],
+          "user_input": "所有测试案例",
+          "assistant_response": "系统整体响应"
+        }
+      ],
+      "medium": [
+        {
+          "dimension": "用户体验",
+          "problem_type": "满意度",
+          "problem_subtype": "整体满意度不足",
+          "score": 0.5733333333333333,
+          "deduction_items": [
+            "满意度得分 0.57 低于阈值 0.75",
+            "平均用户评分: 0.00",
+            "情感分析得分: 0.33",
+            "响应质量得分: 0.93",
+            "需要提升用户满意度和情感体验"
+          ],
+          "user_input": "满意度相关问题",
+          "assistant_response": "无回复数据"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "错误处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "未正确处理不存在的订单查询",
+            "未提供替代解决方案",
+            "缺少明确的错误提示和道歉"
+          ],
+          "user_input": "我的订单123456到哪里了？",
+          "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "边界情况处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "测试案例不属于边界情况，无法评估边界情况处理能力"
+          ],
+          "user_input": "我的订单123456到哪里了？",
+          "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "错误处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "未提供替代解决方案",
+            "缺少明确的错误提示和道歉"
+          ],
+          "user_input": "智能手机A和智能手机B哪个拍照更好？",
+          "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "边界情况处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "测试案例不属于边界情况，无法评估边界情况处理能力"
+          ],
+          "user_input": "智能手机A和智能手机B哪个拍照更好？",
+          "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "错误处理能力不足",
+          "score": 0.6,
+          "deduction_items": [
+            "未提供替代解决方案"
+          ],
+          "user_input": "我刚收到的商品有损坏，我要投诉！",
+          "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+        },
+        {
+          "dimension": "技术质量",
+          "problem_type": "稳健性",
+          "problem_subtype": "边界情况处理能力不足",
+          "score": 0.5,
+          "deduction_items": [
+            "测试案例不属于边界情况，无法评估边界情况处理能力"
+          ],
+          "user_input": "我刚收到的商品有损坏，我要投诉！",
+          "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+        }
+      ],
+      "low": [
+        {
+          "dimension": "用户体验",
+          "problem_type": "效率",
+          "problem_subtype": "整体效率不足",
+          "score": 0.72,
+          "deduction_items": [
+            "效率得分 0.72 低于阈值 0.8",
+            "P50响应时间: 9463ms",
+            "P95响应时间: 11074ms",
+            "会话完成率: 1.00",
+            "响应速度或完成率需要优化"
+          ],
+          "user_input": "效率相关问题",
+          "assistant_response": "无回复数据"
+        }
+      ]
+    },
+    "top_problems": [
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "准确性不足的order_query对话",
+        "score": 0.0,
+        "deduction_items": [
+          "对话类型: order_query",
+          "精确匹配(EM): 0.00",
+          "F1分数: 0.86",
+          "ROUGE-L分数: 0.56",
+          "回答与参考回答差异较大"
+        ],
+        "user_input": "我的订单123456到哪里了？",
+        "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "准确性不足的general对话",
+        "score": 0.0,
+        "deduction_items": [
+          "对话类型: general",
+          "精确匹配(EM): 0.00",
+          "F1分数: 0.64",
+          "ROUGE-L分数: 0.41",
+          "回答与参考回答差异较大"
+        ],
+        "user_input": "智能手机A和智能手机B哪个拍照更好？",
+        "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "准确性不足的complaint对话",
+        "score": 0.0,
+        "deduction_items": [
+          "对话类型: complaint",
+          "精确匹配(EM): 0.00",
+          "F1分数: 0.47",
+          "ROUGE-L分数: 0.26",
+          "回答与参考回答差异较大"
+        ],
+        "user_input": "我刚收到的商品有损坏，我要投诉！",
+        "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+      },
+      {
+        "dimension": "用户体验",
+        "problem_type": "满意度",
+        "problem_subtype": "缺乏用户评分数据",
+        "score": 0.0,
+        "deduction_items": [
+          "日志中未包含用户评分数据",
+          "无法准确评估用户满意度",
+          "建议在系统中添加用户反馈机制"
+        ],
+        "user_input": "满意度相关问题",
+        "assistant_response": "无回复数据"
+      },
+      {
+        "dimension": "用户体验",
+        "problem_type": "满意度",
+        "problem_subtype": "用户情感负面",
+        "score": 0.0,
+        "deduction_items": [
+          "用户情感分析得分: 0.00",
+          "用户表达不满、愤怒或紧急情绪",
+          "需要关注用户情绪并改进响应"
+        ],
+        "user_input": "我刚收到的商品有损坏，我要投诉！",
+        "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "对抗样本处理能力不足",
+        "score": 0.0,
+        "deduction_items": [
+          "响应不够专业",
+          "响应不够完整详细",
+          "响应不够清晰明确",
+          "响应不够正确准确",
+          "整体稳健性指标不足，平均得分: 0.00"
+        ],
+        "user_input": "系统生成的对抗样本",
+        "assistant_response": "基于现有响应的推断"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能完整性",
+        "problem_subtype": "完整性不足的complaint对话",
+        "score": 0.4,
+        "deduction_items": [
+          "对话类型: complaint",
+          "完整性得分: 0.40",
+          "缺失关键词: 工单, 记录, 联系",
+          "目标关键词: 抱歉, 处理, 工单, 记录, 联系..."
+        ],
+        "user_input": "我刚收到的商品有损坏，我要投诉！",
+        "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+      },
+      {
+        "dimension": "功能性能",
+        "problem_type": "功能准确性",
+        "problem_subtype": "整体准确性不足",
+        "score": 0.42605765348162417,
+        "deduction_items": [
+          "准确性得分 0.43 低于阈值 0.8",
+          "EM得分: 0.00",
+          "F1得分: 0.65",
+          "ROUGE-L得分: 0.41",
+          "回答与参考回答存在较大差异"
+        ],
+        "user_input": "功能准确性相关问题",
+        "assistant_response": "无回复数据"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "整体稳健性不足",
+        "score": 0.4503333333333332,
+        "deduction_items": [
+          "综合得分 0.45 低于阈值 0.8",
+          "平均测试案例得分: 0.64",
+          "对抗样本推断得分: 0.00"
+        ],
+        "user_input": "所有测试案例",
+        "assistant_response": "系统整体响应"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "错误处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "未正确处理不存在的订单查询",
+          "未提供替代解决方案",
+          "缺少明确的错误提示和道歉"
+        ],
+        "user_input": "我的订单123456到哪里了？",
+        "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "边界情况处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "测试案例不属于边界情况，无法评估边界情况处理能力"
+        ],
+        "user_input": "我的订单123456到哪里了？",
+        "assistant_response": "您的订单123456（产品：智能手机A）目前状态如下：\n\n**当前状态**：已发货  \n**物流状态**：运输中  \n**预计送达时间**：2024年6月15日  \n**承运商**：顺丰快递  \n**运单号**：SF123456789  \n\n**物流节点追踪**：\n- 2024-06-10 09:00:00 订单已接收\n- 2024-06-10 14:30:00 商品已打包\n- 2024-06-1"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "错误处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "未提供替代解决方案",
+          "缺少明确的错误提示和道歉"
+        ],
+        "user_input": "智能手机A和智能手机B哪个拍照更好？",
+        "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "边界情况处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "测试案例不属于边界情况，无法评估边界情况处理能力"
+        ],
+        "user_input": "智能手机A和智能手机B哪个拍照更好？",
+        "assistant_response": "根据您提供的信息，智能手机A和智能手机B在拍照方面各有优势：\n\n**智能手机A**：\n- **像素**：5000万像素\n- **传感器**：索尼IMX766（这是一款广受好评的传感器，以出色的低光表现和动态范围著称）\n- **光圈**：f/1.8\n\n**智能手机B**：\n- **像素**：1亿像素（更高的像素意味着更多的细节，尤其在裁剪或放大时）\n- **传感器**：三星HM2\n- **光圈**："
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "边界情况处理能力不足",
+        "score": 0.5,
+        "deduction_items": [
+          "测试案例不属于边界情况，无法评估边界情况处理能力"
+        ],
+        "user_input": "我刚收到的商品有损坏，我要投诉！",
+        "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+      },
+      {
+        "dimension": "用户体验",
+        "problem_type": "满意度",
+        "problem_subtype": "整体满意度不足",
+        "score": 0.5733333333333333,
+        "deduction_items": [
+          "满意度得分 0.57 低于阈值 0.75",
+          "平均用户评分: 0.00",
+          "情感分析得分: 0.33",
+          "响应质量得分: 0.93",
+          "需要提升用户满意度和情感体验"
+        ],
+        "user_input": "满意度相关问题",
+        "assistant_response": "无回复数据"
+      },
+      {
+        "dimension": "技术质量",
+        "problem_type": "稳健性",
+        "problem_subtype": "错误处理能力不足",
+        "score": 0.6,
+        "deduction_items": [
+          "未提供替代解决方案"
+        ],
+        "user_input": "我刚收到的商品有损坏，我要投诉！",
+        "assistant_response": "非常抱歉给您带来了不愉快的购物体验！😔 我完全理解您的 frustration，收到损坏的商品确实让人很困扰。\n\n为了更好地帮您解决这个问题，能否请您提供以下信息：\n1. 订单号（如果有）\n2. 商品名称和损坏的具体情况\n3. 是否有商品损坏的照片（这会帮助我们更快处理）\n\n我会立即为您启动投诉处理流程，并确保这个问题得到妥善解决。"
+      },
+      {
+        "dimension": "用户体验",
+        "problem_type": "效率",
+        "problem_subtype": "整体效率不足",
+        "score": 0.72,
+        "deduction_items": [
+          "效率得分 0.72 低于阈值 0.8",
+          "P50响应时间: 9463ms",
+          "P95响应时间: 11074ms",
+          "会话完成率: 1.00",
+          "响应速度或完成率需要优化"
+        ],
+        "user_input": "效率相关问题",
+        "assistant_response": "无回复数据"
+      }
+    ]
+  }
+}

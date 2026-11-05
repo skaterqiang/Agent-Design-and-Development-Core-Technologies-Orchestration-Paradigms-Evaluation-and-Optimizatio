@@ -1,0 +1,29 @@
+# 核心依赖包 - 用于构建大语言模型(LLM)应用程序
+# 第 3 章「打造你的第一个智能体———以客服智能体为例」
+#
+# 说明：书稿原配方把 langchain 钉在 1.1.0。该钉版会连带解析出
+# langgraph-prebuilt 1.0.10，而它需要 langgraph.runtime.ExecutionInfo
+# （langgraph 1.0.10 没有该名字），导致本章 4 个文件里的
+# `from langchain.agents import create_agent` 直接 ImportError。
+# 本文件已整体上调到 langchain 1.4.x 栈，该问题随之消失。
+
+# LangChain 框架基础核心包，包含LCEL等最基础的运行时组件
+langchain_core==1.6.9
+# LangChain 主框架包，提供链、智能体等高级抽象（安装时会自动安装langchain_core）
+langchain==1.4.4
+# LangChain 社区贡献包，包含大量第三方集成（本章用其 ChatTongyi）
+langchain_community==0.4.2
+
+# LangGraph：客服智能体的状态图、检查点与人机协同中断
+# langchain 1.4.4 要求 langgraph>=1.2.11,<1.3.0，故此处配套钉 1.2.14
+langgraph==1.2.14
+langgraph-prebuilt==1.1.0
+langgraph.checkpoint.sqlite==3.1.1
+
+# 模型与工具集成包
+# ModelScope 模型库，用于下载和使用开源AI模型
+modelscope==1.40.2
+# 阿里云灵积(DashScope) API SDK，用于调用通义千问等模型
+dashscope==1.27.7
+
+grandalf==0.8

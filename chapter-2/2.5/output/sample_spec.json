@@ -1,0 +1,25 @@
+{
+  "title": "Skills 技术发展简史（样例）",
+  "sections": [
+    {
+      "heading": "引言",
+      "paragraphs": [
+        "本样例由 generate_docx.py 离线生成，用于验证工具链；完整正文由 Deep Agent 在有效 API Key 下自动生成。"
+      ]
+    },
+    {
+      "heading": "从插件到 Agent Skills",
+      "paragraphs": [
+        "早期 IDE 与编辑器通过插件扩展能力；大模型时代逐步演化为提示模板、工具调用与可加载的技能包（SKILL.md + 资源）。"
+      ],
+      "subsections": [
+        {
+          "heading": "渐进式披露",
+          "paragraphs": [
+            "技能元数据先进入系统提示，完整说明在匹配任务后再读取，以节省上下文并提高可维护性。"
+          ]
+        }
+      ]
+    }
+  ]
+}

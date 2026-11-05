@@ -1,0 +1,37 @@
+#pip install -r requirements.txt
+#
+# 第 4 章「智能体编排模式：适应各类复杂任务」
+# 本章 62 个 .py 大量使用 langchain / langgraph，那部分依赖由
+# **仓库根目录的 requirements.txt** 统一提供，请先安装它：
+#     python -m pip install -r ../../requirements.txt
+# 本文件只声明第 4 章额外需要的数据处理与文档解析依赖。
+#
+#如果检查pytorch不支持cuda，先卸载 pip3 uninstall torch torchvision torchaudio
+#再安装 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+datasets==3.2.0
+modelscope==1.40.2
+bs4==0.0.2
+
+# 4.8.2/pdf/scripts 下 5 个脚本 import 的是 pypdf。
+# 书稿此处原写 PyPDF2==3.0.1，但 PyPDF2 已于 2023 年改名为 pypdf，
+# 二者是不同的发行包（PyPDF2 已停止维护），装 PyPDF2 不会提供 pypdf 模块，
+# 故按代码实际写法改为 pypdf。
+pypdf>=5.0
+
+# 4.8.2/pdf/scripts/convert_pdf_to_images.py 需要。
+# 除本包外还需在系统层安装 poppler：
+#   Windows: 下载 poppler for Windows，把其 bin 目录加入 PATH
+#   Debian/Ubuntu: sudo apt install poppler-utils
+#   macOS: brew install poppler
+pdf2image>=1.17
+
+# 4.8.5/smart-supply-chain-system/src/dynamic_cost_optimization.py
+# 使用 scipy.optimize.minimize
+scipy>=1.11
+
+# 若干脚本用到的通用依赖
+numpy>=1.26
+pillow>=10.0
+PyYAML>=6.0
+pydantic>=2.5
+typing-extensions>=4.8

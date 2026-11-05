@@ -1,0 +1,25 @@
+@startuml
+
+skinparam class {
+    BackgroundColor #EEE
+    BorderColor #333
+    ArrowColor #333
+    FontSize 13
+}
+
+abstract class "BaseEvaluator\n评估智能体基类" as BaseEvaluator
+class "MainEvaluationSystem\n主运行程序" as MainEvaluationSystem
+
+class "BusinessValueEvaluator\n业务价值评估智能体" as BusinessValueEvaluator
+class "UserExperienceEvaluator\n用户体验评估智能体" as UserExperienceEvaluator
+class "FunctionalEvaluator\n功能性能评估智能体" as FunctionalEvaluator
+class "TechnicalQualityEvaluator\n技术质量评估智能体" as TechnicalQualityEvaluator
+
+BaseEvaluator <|-- BusinessValueEvaluator
+BaseEvaluator <|-- UserExperienceEvaluator
+BaseEvaluator <|-- FunctionalEvaluator
+BaseEvaluator <|-- TechnicalQualityEvaluator
+
+MainEvaluationSystem --> BaseEvaluator : 引用/调用
+
+@enduml

@@ -1,0 +1,14 @@
+# LoRA
+swift infer --model "D:\model\Qwen\Qwen3-0.6B-Base" --adapters ./output/v0-20260214-220207/checkpoint-15/ --stream true --merge_lora false  --max_model_len 8192 --temperature 0.7 --repetition_penalty 1.1 --max_new_tokens 2048
+
+
+curl http://localhost:6006/v1/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "136-merged",
+        "prompt": "何谓从则生，逆则死？",
+        "max_tokens": 500,
+        "stream": false
+    }'
+
+

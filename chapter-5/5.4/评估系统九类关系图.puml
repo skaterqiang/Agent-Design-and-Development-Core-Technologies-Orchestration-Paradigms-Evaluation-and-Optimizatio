@@ -1,0 +1,49 @@
+@startuml
+
+skinparam class {
+    BackgroundColor #EEE
+    BorderColor #333
+    ArrowColor #333
+    FontSize 13
+}
+
+class "MainEvaluationSystem\n主运行程序" as MainEvaluationSystem
+
+abstract class "BaseEvaluator\n评估智能体基类" as BaseEvaluator
+class "BusinessValueEvaluator\n业务评估智能体" as BusinessValueEvaluator
+class "UserExperienceEvaluator\n用户体验评估智能体" as UserExperienceEvaluator
+class "FunctionalEvaluator\n功能性能评估智能体" as FunctionalEvaluator
+class "TechnicalQualityEvaluator\n技术质量评估智能体" as TechnicalQualityEvaluator
+
+class "ReportGenerator\n报表生成工具" as ReportGenerator
+class "CustomerServiceAgent\n电商客服智能体(被评估)" as CustomerServiceAgent
+class "QwenEmbeddingDownloader\n嵌入模型下载工具" as QwenEmbeddingDownloader
+
+' 评估专家继承体系
+BaseEvaluator <|-- BusinessValueEvaluator
+BaseEvaluator <|-- UserExperienceEvaluator
+BaseEvaluator <|-- FunctionalEvaluator
+BaseEvaluator <|-- TechnicalQualityEvaluator
+
+' 主程序编排关系
+MainEvaluationSystem --> BusinessValueEvaluator : 调用评估
+MainEvaluationSystem --> UserExperienceEvaluator : 调用评估
+MainEvaluationSystem --> FunctionalEvaluator : 调用评估
+MainEvaluationSystem --> TechnicalQualityEvaluator : 调用评估
+MainEvaluationSystem --> ReportGenerator : 生成总报告
+MainEvaluationSystem --> CustomerServiceAgent : 加载被评估智能体
+MainEvaluationSystem ..> QwenEmbeddingDownloader : 初始化嵌入模型
+
+' 评估器对被评估对象的依赖
+BusinessValueEvaluator ..> CustomerServiceAgent : 评估业务价值
+UserExperienceEvaluator ..> CustomerServiceAgent : 评估用户体验
+FunctionalEvaluator ..> CustomerServiceAgent : 评估功能性能
+TechnicalQualityEvaluator ..> CustomerServiceAgent : 评估技术质量
+
+' 报表汇总关系
+ReportGenerator ..> BusinessValueEvaluator : 汇总结果
+ReportGenerator ..> UserExperienceEvaluator : 汇总结果
+ReportGenerator ..> FunctionalEvaluator : 汇总结果
+ReportGenerator ..> TechnicalQualityEvaluator : 汇总结果
+
+@enduml

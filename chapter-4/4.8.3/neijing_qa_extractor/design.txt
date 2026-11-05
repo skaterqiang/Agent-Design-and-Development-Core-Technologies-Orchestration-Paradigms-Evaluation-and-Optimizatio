@@ -1,0 +1,2 @@
+读取文件“huangdi_neijing.htm”写一个python程序放到extract_neijing_qa.py文件中，
+该程序从“huangdi_neijing.htm”文件中提取如{“帝曰：”“岐伯曰”} {"黄帝曰:"“岐伯曰”}这样的问答对，并记录提取到的问答对所属章节（章节在huangdi_neijing.htm使用</h1>分割）。

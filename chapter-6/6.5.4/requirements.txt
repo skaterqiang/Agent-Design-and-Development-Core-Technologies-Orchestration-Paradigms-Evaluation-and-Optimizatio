@@ -1,0 +1,20 @@
+#pip install -r requirements.txt
+#
+# 第 6 章 6.5.4 节：使用 ms-swift 对 Qwen3-0.6B-Base 做 LoRA 后训练
+#
+#如果检查pytorch不支持cuda，先卸载 pip3 uninstall torch torchvision torchaudio
+#再安装 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+datasets==3.2.0
+modelscope==1.40.2
+ms-swift==3.9.3
+swanlab==0.7.5
+#linux sudo apt install python3.10-dev
+torch-c-dlpack-ext==0.1.4
+tf-keras==2.20.1
+
+# 书稿原配方未声明 torch / transformers，但本目录下的
+# checkcuda.py、inference-Qwen3-0.6B-Base.py 直接 import 二者
+# （原先它们只经由 ms-swift 传递引入），故在此显式声明。
+# 版本与仓库根 requirements.txt 保持一致，避免两处装出不同的 torch。
+torch==2.7.1
+transformers==4.57.6

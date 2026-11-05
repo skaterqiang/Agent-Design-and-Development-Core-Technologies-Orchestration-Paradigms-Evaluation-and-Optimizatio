@@ -1,0 +1,77 @@
+# 智能供应链管理系统配置文件
+
+system:
+  name: "Smart Supply Chain System"
+  version: "1.0.0"
+  debug: false
+  log_level: "INFO"
+
+coordinator:
+  heartbeat_interval: 30  # seconds
+  task_timeout: 3600      # seconds
+  max_concurrent_tasks: 100
+  retry_attempts: 3
+
+cluster:
+  node_timeout: 300       # seconds (5 minutes)
+  load_threshold: 0.8     # max load per node
+  auto_scale: true
+  min_nodes: 3
+  max_nodes: 20
+
+visualization:
+  refresh_interval: 10    # seconds
+  retention_days: 30
+  enable_realtime_updates: true
+  chart_types: ["timeline", "network", "heatmap", "gantt"]
+
+cost_optimization:
+  optimization_interval: 300  # seconds (5 minutes)
+  cost_factors: ["transportation", "inventory", "labor", "energy"]
+  optimization_algorithms: ["genetic", "linear_programming", "reinforcement_learning"]
+  budget_constraints: true
+
+risk_alert:
+  alert_threshold: 0.7
+  risk_categories: ["supply_disruption", "demand_surge", "logistics_delay", "quality_issue"]
+  notification_channels: ["email", "sms", "dashboard", "webhook"]
+  escalation_levels: 3
+
+collaboration:
+  api_version: "v1"
+  authentication: "oauth2"
+  data_sharing_policy: "opt-in"
+  collaboration_protocols: ["blockchain", "secure_mpc", "federated_learning"]
+
+react_assistant:
+  reasoning_steps: 5
+  validation_threshold: 0.85
+  human_review_required: true
+  sequential_execution: true
+
+optimization_mode:
+  monitoring_interval: 60     # seconds
+  iteration_limit: 100
+  parallel_workers: 8
+  task_hierarchy_levels: 4
+  convergence_threshold: 0.01
+
+database:
+  host: "localhost"
+  port: 5432
+  name: "supply_chain_db"
+  user: "sc_user"
+  password: "sc_password"
+  pool_size: 20
+
+cache:
+  type: "redis"
+  host: "localhost"
+  port: 6379
+  ttl: 3600
+
+logging:
+  file: "/home/admin/.openclaw/workspace/smart-supply-chain-system/logs/supply_chain.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  max_file_size: 10485760  # 10MB
+  backup_count: 5

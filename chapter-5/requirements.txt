@@ -1,0 +1,30 @@
+# 第 5 章「智能体评估」
+#
+# 书稿原配方只有 sentence_transformers 与 seaborn 两行，但 5.4 节的
+# 评估系统实际还用到 langchain / langgraph / jieba / rouge / sklearn 等，
+# 照抄原配方会缺依赖。此处按代码实际 import 补齐。
+
+# --- 5.4 节 customer_service.py：被评估的客服智能体本体 ---
+langchain_core==1.6.9
+langchain==1.4.4
+langchain_community==0.4.2
+langgraph==1.2.14
+langgraph-prebuilt==1.1.0
+dashscope==1.27.7
+# 5.4 节 modelscope-qwen-embedding-download.py
+modelscope==1.40.2
+
+# --- 语义相似度与向量检索评估 ---
+sentence_transformers==5.2.0
+
+# --- 5.4 节 functional_evaluator.py：中文分词 + ROUGE 摘要指标 ---
+jieba>=0.42
+rouge>=1.0
+
+# --- 统计与可视化 ---
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.3
+matplotlib>=3.8
+seaborn==0.13.2

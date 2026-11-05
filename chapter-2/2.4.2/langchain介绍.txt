@@ -1,0 +1,5 @@
+Langchain是一个由大型语言模型(LLM)驱动的应用框架。
+    它使应用能够连接到各种数据源来获取数据以进行分析。
+    Langchain通过链(Chain)组件将多个调用连接在一起，创建序列化的工作流。
+    Agents 可以使用工具和进行推理来做出决策和采取行动。
+    Retrieval-Augmented Generation (RAG) 是一种增强 LLM 能力的方法。
